@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "yoQSAynBEnc5rc89gVVQL8VhxyGxo1/g1WO7fVrgCF58gmGFTOgDgkA6PfFf7q2vzmd/OldxEE9LFyEceGj10A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jckzh\\source\\repos\\SpooninDrawer\\SpooninDrawer\\SpooninDrawer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jckzh\\.nuget\\packages\\monogame.content.builder.task\\3.8.1.303\\monogame.content.builder.task.3.8.1.303.nupkg.sha512",
+    "C:\\Users\\jckzh\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.1.303\\monogame.framework.desktopgl.3.8.1.303.nupkg.sha512"
+  ],
+  "logs": []
+}
