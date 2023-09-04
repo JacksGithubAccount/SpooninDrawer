@@ -1,3 +1,3 @@
 ﻿
-using var game = new SpooninDrawer.Game1();
+using var game = new SpooninDrawer.MainGame();
 game.Run();
