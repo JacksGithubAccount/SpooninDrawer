@@ -80,7 +80,7 @@ namespace SpooninDrawer
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            SwitchGameState(new TitleState());
+            SwitchGameState(new SplashState());
         }
 
         private void CurrentGameState_OnStateSwitched(object sender, BaseGameState e)
@@ -99,7 +99,7 @@ namespace SpooninDrawer
 
             _currentGameState = gameState;
 
-            _currentGameState.Initialize(Content);
+            _currentGameState.Initialize(Content, _graphics.GraphicsDevice.Viewport.Width, _graphics.GraphicsDevice.Viewport.Height);
 
             _currentGameState.LoadContent();
 
@@ -127,7 +127,8 @@ namespace SpooninDrawer
                 Exit();
 
             // TODO: Add your update logic here
-            _currentGameState.HandleInput();
+            _currentGameState.HandleInput(gameTime);
+            _currentGameState.Update(gameTime);
 
             base.Update(gameTime);
         }

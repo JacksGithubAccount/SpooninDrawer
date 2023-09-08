@@ -24,3 +24,4 @@ C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\obj\Debug\net6.0\Spoonin
 C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\obj\Debug\net6.0\SpooninDrawer.genruntimeconfig.cache
 C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\obj\Debug\net6.0\ref\SpooninDrawer.dll
 C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Content\Menu\titleScreen.xnb
+C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Content\Menu\TitleScreenArroww.xnb

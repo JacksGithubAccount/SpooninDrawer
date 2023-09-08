@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace SpooninDrawer.Objects
 {
-    public class TitleImage : BaseGameObject
+    public class SplashImage : BaseGameObject
     {
-        public TitleImage(Texture2D texture)
+        public SplashImage(Texture2D texture)
         {
             _texture = texture;
         }

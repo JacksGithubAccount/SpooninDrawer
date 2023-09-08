@@ -5,8 +5,10 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/titleScreen.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/TitleScreenArroww.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

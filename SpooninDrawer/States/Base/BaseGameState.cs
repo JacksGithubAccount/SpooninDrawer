@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SpooninDrawer.Enum;
 using SpooninDrawer.Objects.Base;
+using Microsoft.Xna.Framework;
+using SpooninDrawer.Input.Base;
 
 namespace SpooninDrawer.States.Base
 {
@@ -15,26 +17,34 @@ namespace SpooninDrawer.States.Base
         private const string FallbackTexture = "Empty";
 
         private ContentManager _contentManager;
+        protected int _viewportHeight;
+        protected int _viewportWidth;
 
         private readonly List<BaseGameObject> _gameObjects = new List<BaseGameObject>();
 
-        public void Initialize(ContentManager contentManager)
+        protected InputManager InputManager { get; set; }
+
+        public void Initialize(ContentManager contentManager, int viewportWidth, int viewportHeight)
         {
             _contentManager = contentManager;
+            _viewportHeight = viewportHeight;
+            _viewportWidth = viewportWidth;
+
+            SetInputManager();
         }
 
         public abstract void LoadContent();
+        public virtual void Update(GameTime gameTime) { }
+        public abstract void HandleInput(GameTime gameTime);
+
+        public event EventHandler<BaseGameState> OnStateSwitched;
+        public event EventHandler<Events> OnEventNotification;
+        protected abstract void SetInputManager();
 
         public void UnloadContent()
         {
             _contentManager.Unload();
         }
-
-        public abstract void HandleInput();
-
-        public event EventHandler<BaseGameState> OnStateSwitched;
-
-        public event EventHandler<Events> OnEventNotification;
 
         protected Texture2D LoadTexture(string textureName)
         {
@@ -49,7 +59,7 @@ namespace SpooninDrawer.States.Base
 
             foreach (var gameObject in _gameObjects)
             {
-                gameObject.OnNotify(eventType);
+                gameObject.OnNotify(eventType, argument);
             }
         }
 
@@ -61,6 +71,11 @@ namespace SpooninDrawer.States.Base
         protected void AddGameObject(BaseGameObject gameObject)
         {
             _gameObjects.Add(gameObject);
+        }
+
+        protected void RemoveGameObject(BaseGameObject gameObject)
+        {
+            _gameObjects.Remove(gameObject);
         }
 
         public void Render(SpriteBatch spriteBatch)
