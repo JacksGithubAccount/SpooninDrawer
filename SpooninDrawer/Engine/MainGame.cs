@@ -1,11 +1,8 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using SpooninDrawer.Engine.Base;
 using SpooninDrawer.Engine.States;
-using SpooninDrawer.Enum;
 using SpooninDrawer.States;
-using SpooninDrawer.States.Base;
 
 namespace SpooninDrawer.Engine
 {

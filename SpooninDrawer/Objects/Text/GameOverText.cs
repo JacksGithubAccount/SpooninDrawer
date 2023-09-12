@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework.Graphics;
-using SpooninDrawer.Engine.Base;
 using SpooninDrawer.Engine.Objects;
 using System;
 using System.Collections.Generic;
@@ -7,13 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpooninDrawer.Objects
+namespace SpooninDrawer.Objects.Text
 {
-    public class SplashImage : BaseGameObject
+    public class GameOverText : BaseTextObject
     {
-        public SplashImage(Texture2D texture)
+        public GameOverText(SpriteFont font)
         {
-            _texture = texture;
+            _font = font;
+            Text = "Game Over";
         }
     }
 }

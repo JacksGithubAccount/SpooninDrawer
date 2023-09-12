@@ -15,7 +15,10 @@ namespace SpooninDrawer
          * -Added basic engine stuff to display titlescreen
          * 9/5/2023
          * -Added input engine stuff
-         * 
+         * 9/9/2023
+         * -added more engine stuff
+         * 9/11/2023
+         * -added all but gameplay state
          * 
          * 
          * 

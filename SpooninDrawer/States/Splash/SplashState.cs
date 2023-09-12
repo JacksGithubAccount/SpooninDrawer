@@ -9,6 +9,11 @@ using System.Threading.Tasks;
 using SpooninDrawer.Engine.Input;
 using SpooninDrawer.Engine.States;
 using SpooninDrawer.Input;
+using Microsoft.Xna.Framework;
+using SpooninDrawer.Engine.Input.Base;
+using SpooninDrawer.Engine.States.Gameplay;
+
+
 
 namespace SpooninDrawer.States.Splash
 {
@@ -30,6 +35,8 @@ namespace SpooninDrawer.States.Splash
                 }
             });
         }
+
+        public override void UpdateGameState(GameTime _) { }
 
         protected override void SetInputManager()
         {
