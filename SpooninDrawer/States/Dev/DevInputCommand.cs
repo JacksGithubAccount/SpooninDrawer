@@ -13,6 +13,8 @@ namespace SpooninDrawer.States.Dev
         public class DevQuit : DevInputCommand { }
         public class DevLeft : DevInputCommand { }
         public class DevRight : DevInputCommand { }
+        public class DevUp : DevInputCommand { }
+        public class DevDown : DevInputCommand { }
         public class DevNotMoving : DevInputCommand { }
     }
 }

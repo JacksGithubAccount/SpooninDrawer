@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using SpooninDrawer.Engine.Input;
 using SpooninDrawer.Engine.States;
-using SpooninDrawer.Input;
 using Microsoft.Xna.Framework;
 using SpooninDrawer.Engine.Input.Base;
 using SpooninDrawer.Engine.States.Gameplay;

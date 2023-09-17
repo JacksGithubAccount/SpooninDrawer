@@ -1,6 +1,4 @@
 ﻿using Microsoft.Xna.Framework.Input;
-using SpooninDrawer.Input.Base;
-using SpooninDrawer.Input;
 using SpooninDrawer.Engine.Input;
 using System;
 using System.Collections.Generic;

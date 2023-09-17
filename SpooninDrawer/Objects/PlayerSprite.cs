@@ -37,6 +37,8 @@ namespace SpooninDrawer.Objects
 
         private bool _movingLeft = false;
         private bool _movingRight = false;
+        private bool _movingUp = false;
+        private bool _movingDown = false;
 
         public override int Height => AnimationCellHeight;
         public override int Width => AnimationCellWidth;
@@ -95,6 +97,26 @@ namespace SpooninDrawer.Objects
             _rightToCenterAnimation.Reset();
             _turnLeftAnimation.Reset();
             Position = new Vector2(Position.X + PlayerSpeed, Position.Y);
+        }
+
+        public void MoveUp()
+        {
+            _movingUp = true;
+            _movingDown = false;
+            //_currentAnimation = _turnRightAnimation;
+            //_rightToCenterAnimation.Reset();
+            //_turnLeftAnimation.Reset();
+            Position = new Vector2(Position.X, Position.Y - PlayerSpeed);
+        }
+
+        public void MoveDown()
+        {
+            _movingUp = false;
+            _movingDown = true;
+            //_currentAnimation = _turnRightAnimation;
+            //_rightToCenterAnimation.Reset();
+            //_turnLeftAnimation.Reset();
+            Position = new Vector2(Position.X, Position.Y + PlayerSpeed);
         }
 
         public void Update(GameTime gametime)

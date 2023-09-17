@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SpooninDrawer.Enum;
 using Microsoft.Xna.Framework;
 using SpooninDrawer.Engine.States;
 using SpooninDrawer.Engine.Objects;

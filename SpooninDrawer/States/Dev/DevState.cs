@@ -52,6 +52,16 @@ namespace SpooninDrawer.States.Dev
                     _player.MoveRight();
                 }
 
+                if (cmd is DevInputCommand.DevUp)
+                {
+                    _player.MoveUp();
+                }
+
+                if (cmd is DevInputCommand.DevDown)
+                {
+                    _player.MoveDown();
+                }
+
                 if (cmd is DevInputCommand.DevNotMoving)
                 {
                     _player.StopMoving();

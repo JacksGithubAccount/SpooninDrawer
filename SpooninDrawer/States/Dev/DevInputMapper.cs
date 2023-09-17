@@ -26,7 +26,15 @@ namespace SpooninDrawer.States.Dev
             {
                 commands.Add(new DevInputCommand.DevLeft());
             }
-            else
+            if (state.IsKeyDown(Keys.Up))
+            {
+                commands.Add(new DevInputCommand.DevUp());
+            }
+            else if (state.IsKeyDown(Keys.Down))
+            {
+                commands.Add(new DevInputCommand.DevDown());
+            }
+            if (state.IsKeyUp(Keys.Right) && state.IsKeyUp(Keys.Left) && state.IsKeyUp(Keys.Up) && state.IsKeyUp(Keys.Down))
             { 
                 commands.Add(new DevInputCommand.DevNotMoving());
             }

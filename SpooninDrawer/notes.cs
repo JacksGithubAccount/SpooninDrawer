@@ -21,7 +21,8 @@ namespace SpooninDrawer
          * -added all but gameplay state
          * 9/13/2023
          * -added game play state, done ch10
-         * 
+         * 9/16/2023
+         * -added input for moving up and down, no animation yet for player
          * 
          * 
          * 
