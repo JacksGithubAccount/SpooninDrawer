@@ -25,10 +25,6 @@ namespace SpooninDrawer.Engine.States.Gameplay
     {
         private const string BackgroundTexture = "Sprites/Barren";
         private const string PlayerFighter = "Sprites/Animations/FighterSpriteSheet";
-        private const string BulletTexture = "Sprites/bullet";
-        private const string ExhaustTexture = "Sprites/Cloud";
-        private const string MissileTexture = "Sprites/Missile";
-        private const string ChopperTexture = "Sprites/Chopper";
         private const string ExplosionTexture = "Sprites/explosion";
 
         private const string TextFont = "Fonts/Lives";
@@ -66,11 +62,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
 
         public override void LoadContent()
         {
-            _missileTexture = LoadTexture(MissileTexture);
-            _exhaustTexture = LoadTexture(ExhaustTexture);
-            _bulletTexture = LoadTexture(BulletTexture);
-            _explosionTexture = LoadTexture(ExplosionTexture);
-            _chopperTexture = LoadTexture(ChopperTexture);
+            //_explosionTexture = LoadTexture(ExplosionTexture);
 
             _playerSprite = new PlayerSprite(LoadTexture(PlayerFighter));
 

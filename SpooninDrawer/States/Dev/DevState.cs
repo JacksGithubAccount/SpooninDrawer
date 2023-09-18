@@ -16,12 +16,12 @@ namespace SpooninDrawer.States.Dev
     /// </summary>
     public class DevState : BaseGameState
     {
-        private const string FighterSpriteSheet = "Sprites/Animations/FighterSpriteSheet";
+        private const string playerSpriteSheet = "Sprites/Animations/FighterSpriteSheet";
         private PlayerSprite _player;
 
         public override void LoadContent()
         {
-            _player = new PlayerSprite(LoadTexture(FighterSpriteSheet));
+            _player = new PlayerSprite(LoadTexture(playerSpriteSheet));
             _player.Position = new Vector2(200, 400);
             AddGameObject(_player);
 
