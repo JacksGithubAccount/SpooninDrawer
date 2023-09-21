@@ -24,17 +24,17 @@ namespace SpooninDrawer.Engine.States.Gameplay
     public class GameplayState : BaseGameState
     {
         private const string BackgroundTexture = "Sprites/Barren";
-        private const string PlayerFighter = "Sprites/Animations/FighterSpriteSheet";
-        private const string ExplosionTexture = "Sprites/explosion";
+        private const string PlayerFighter = "Sprites/Animations/PlayerSpriteSheet";
+        //rivate const string ExplosionTexture = "Sprites/explosion";
 
         private const string TextFont = "Fonts/Lives";
         private const string GameOverFont = "Fonts/GameOver";
 
-        private const string BulletSound = "Sounds/bulletSound";
-        private const string MissileSound = "Sounds/missileSound";
+        //private const string BulletSound = "Sounds/bulletSound";
+        //private const string MissileSound = "Sounds/missileSound";
 
-        private const string Soundtrack1 = "Music/FutureAmbient_1";
-        private const string Soundtrack2 = "Music/FutureAmbient_2";
+        //private const string Soundtrack1 = "Music/FutureAmbient_1";
+        //private const string Soundtrack2 = "Music/FutureAmbient_2";
 
         private const int StartingPlayerLives = 3;
         private int _playerLives = StartingPlayerLives;
@@ -67,14 +67,14 @@ namespace SpooninDrawer.Engine.States.Gameplay
             _playerSprite = new PlayerSprite(LoadTexture(PlayerFighter));
 
             // load sound effects and register in the sound manager
-            var bulletSound = LoadSound(BulletSound);
-            var missileSound = LoadSound(MissileSound);
+            //var bulletSound = LoadSound(BulletSound);
+            //var missileSound = LoadSound(MissileSound);
 
 
             // load soundtracks into sound manager
-            var track1 = LoadSound(Soundtrack1).CreateInstance();
-            var track2 = LoadSound(Soundtrack2).CreateInstance();
-            _soundManager.SetSoundtrack(new List<SoundEffectInstance>() { track1, track2 });
+            //var track1 = LoadSound(Soundtrack1).CreateInstance();
+            //var track2 = LoadSound(Soundtrack2).CreateInstance();
+            //_soundManager.SetSoundtrack(new List<SoundEffectInstance>() { track1, track2 });
 
             ResetGame();
         }
@@ -97,6 +97,18 @@ namespace SpooninDrawer.Engine.States.Gameplay
                 if (cmd is GameplayInputCommand.PlayerMoveRight && !_playerDead)
                 {
                     _playerSprite.MoveRight();
+                    KeepPlayerInBounds();
+                }
+
+                if (cmd is GameplayInputCommand.PlayerMoveUp && !_playerDead)
+                {
+                    _playerSprite.MoveUp();
+                    KeepPlayerInBounds();
+                }
+
+                if (cmd is GameplayInputCommand.PlayerMoveDown && !_playerDead)
+                {
+                    _playerSprite.MoveDown();
                     KeepPlayerInBounds();
                 }
 

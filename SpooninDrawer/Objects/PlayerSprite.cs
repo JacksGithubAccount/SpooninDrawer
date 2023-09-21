@@ -24,6 +24,7 @@ namespace SpooninDrawer.Objects
         private const int BB2Width = 111;
         private const int BB2Height = 37;
 
+        private Animation _idleAnimation = new Animation(false);
         private Animation _turnLeftAnimation = new Animation(false);
         private Animation _turnRightAnimation = new Animation(false);
         private Animation _leftToCenterAnimation = new Animation(false);
@@ -35,6 +36,7 @@ namespace SpooninDrawer.Objects
         private Animation _currentAnimation;
         private Rectangle _idleRectangle;
 
+        private bool _isIdle = false;
         private bool _movingLeft = false;
         private bool _movingRight = false;
         private bool _movingUp = false;
@@ -50,10 +52,19 @@ namespace SpooninDrawer.Objects
             AddBoundingBox(new Engine.Objects.BoundingBox(new Vector2(BB2PosX, BB2PosY), BB2Width, BB2Height));
 
             _idleRectangle = new Rectangle(348, 0, AnimationCellWidth, AnimationCellHeight);
-            _turnLeftAnimation.AddFrame(new Rectangle(348, 0, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
-            _turnLeftAnimation.AddFrame(new Rectangle(232, 0, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
-            _turnLeftAnimation.AddFrame(new Rectangle(116, 0, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
-            _turnLeftAnimation.AddFrame(new Rectangle(0, 0, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
+            _idleAnimation.MakeLoop();
+            _idleAnimation.AddFrame(new Rectangle(0, 0, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
+            _idleAnimation.AddFrame(new Rectangle(116, 0, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
+            _idleAnimation.AddFrame(new Rectangle(232, 0, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
+            _idleAnimation.AddFrame(new Rectangle(348, 0, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
+            _idleAnimation.AddFrame(new Rectangle(464, 0, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
+
+            _turnLeftAnimation.MakeLoop();
+            _turnLeftAnimation.AddFrame(new Rectangle(0, 152, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
+            _turnLeftAnimation.AddFrame(new Rectangle(116, 152, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
+            _turnLeftAnimation.AddFrame(new Rectangle(232, 152, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
+            _turnLeftAnimation.AddFrame(new Rectangle(348, 152, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
+            _turnLeftAnimation.AddFrame(new Rectangle(464, 152, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
 
             _turnRightAnimation.AddFrame(new Rectangle(348, 0, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
             _turnRightAnimation.AddFrame(new Rectangle(464, 0, AnimationCellWidth, AnimationCellHeight), AnimationSpeed);
@@ -77,12 +88,19 @@ namespace SpooninDrawer.Objects
                 _currentAnimation = _rightToCenterAnimation;
                 _movingRight = false;
             }
+            if (!_movingLeft && !_movingRight && !_isIdle)
+            {
+                _currentAnimation = _idleAnimation;
+                _isIdle = true;
+                _idleAnimation.Reset();
+            }
         }
 
         public void MoveLeft()
         {
             _movingLeft = true;
             _movingRight = false;
+            _isIdle = false;
             _currentAnimation = _turnLeftAnimation;
             _leftToCenterAnimation.Reset();
             _turnRightAnimation.Reset();
@@ -93,6 +111,7 @@ namespace SpooninDrawer.Objects
         {
             _movingRight = true;
             _movingLeft = false;
+            _isIdle = false;
             _currentAnimation = _turnRightAnimation;
             _rightToCenterAnimation.Reset();
             _turnLeftAnimation.Reset();

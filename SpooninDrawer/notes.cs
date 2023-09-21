@@ -23,9 +23,14 @@ namespace SpooninDrawer
          * -added game play state, done ch10
          * 9/16/2023
          * -added input for moving up and down, no animation yet for player
-         * 9/17/2023
-         * -
-         * 
+         * 9/19/2023
+         * -started adding idle animation, also up an ddown doesn't work
+         * -Idle animation works, also added method to make an animation loop
+         * -up and down works now
+         * 9/20/2023
+         * -updated title screen to fit intended resolution for now
+         * -added menu arrow and got arrow to move around title screen, also make arrow loop back around when going past first and last option
+         * -trying to polymorph screens; solved using an interface for base screen
          * 
          */
     }

@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SpooninDrawer.Engine.Input;
 using SpooninDrawer.Engine.Input.Base;
+using SpooninDrawer.States.Gameplay;
 
 namespace SpooninDrawer.States.Splash
 {
@@ -13,5 +14,12 @@ namespace SpooninDrawer.States.Splash
     {
         // Out of Game Commands
         public class GameSelect : SplashInputCommand { }
+        public class LoadSelect : SplashInputCommand { }
+        public class SettingsSelect : SplashInputCommand { }
+        public class ExitSelect : SplashInputCommand { }
+        public class MenuMoveLeft : SplashInputCommand { }
+        public class MenuMoveRight : SplashInputCommand { }
+        public class MenuMoveUp : SplashInputCommand { }
+        public class MenuMoveDown : SplashInputCommand { }
     }
 }

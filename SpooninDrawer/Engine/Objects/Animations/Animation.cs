@@ -97,5 +97,10 @@ namespace SpooninDrawer.Engine.Objects.Animations
         {
             _animationAge = 0;
         }
+
+        public void MakeLoop()
+        {
+            _isLoop = true;
+        }
     }
 }

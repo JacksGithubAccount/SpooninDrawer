@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SpooninDrawer.States.Dev;
 
 namespace SpooninDrawer.States.Gameplay
 {
@@ -33,7 +34,15 @@ namespace SpooninDrawer.States.Gameplay
             {
                 commands.Add(new GameplayInputCommand.PlayerMoveLeft());
             }
-            else
+            if (state.IsKeyDown(Keys.Up))
+            {
+                commands.Add(new GameplayInputCommand.PlayerMoveUp());
+            }
+            else if (state.IsKeyDown(Keys.Down))
+            {
+                commands.Add(new GameplayInputCommand.PlayerMoveDown());
+            }
+            if (state.IsKeyUp(Keys.Right) && state.IsKeyUp(Keys.Left) && state.IsKeyUp(Keys.Up) && state.IsKeyUp(Keys.Down))
             {
                 commands.Add(new GameplayInputCommand.PlayerStopsMoving());
             }

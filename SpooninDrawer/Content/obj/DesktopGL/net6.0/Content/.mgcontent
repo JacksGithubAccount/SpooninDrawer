@@ -12,8 +12,12 @@
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/music/FutureAmbient_4.wav</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/sounds/bullet.wav</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/sounds/empty.wav</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Sprites/Animations/PlayerSpriteSheet - Copy.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Sprites/Animations/PlayerSpriteSheet.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
