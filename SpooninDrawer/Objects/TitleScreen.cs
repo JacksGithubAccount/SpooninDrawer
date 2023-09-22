@@ -37,6 +37,6 @@ namespace SpooninDrawer.Objects
             menuNavigatorYCap = 3;
         }
 
-
+        string GetMenuCommand(int x, int y) { }
     }
 }
