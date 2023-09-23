@@ -4,6 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/SettingsScreen.png</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/titleScreen.png</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/TitleScreenArroww.png</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/music/FutureAmbient_1.wav</File>
@@ -16,6 +17,7 @@
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Sprites/Animations/PlayerSpriteSheet.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

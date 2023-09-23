@@ -1,4 +1,5 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/SettingsScreen.png","C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/bin/DesktopGL/Content/Menu/SettingsScreen.xnb","TextureProcessor","Texture2DContent",23061,3686485,0.1699137
 "C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/titleScreen.png","C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/bin/DesktopGL/Content/Menu/titleScreen.xnb","TextureProcessor","Texture2DContent",21475,3686485,0.2602127
 "C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/TitleScreenArroww.png","C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/bin/DesktopGL/Content/Menu/TitleScreenArroww.xnb","TextureProcessor","Texture2DContent",1460,36085,0.0933444
 "C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/music/FutureAmbient_1.wav","C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/bin/DesktopGL/Content/music/FutureAmbient_1.xnb","SoundEffectProcessor","SoundEffectContent",1697536,1693545,0.3594084

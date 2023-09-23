@@ -28,25 +28,31 @@ namespace SpooninDrawer.States.Splash
         private int menuNavigatorXCap;
         private int menuNavigatorYCap;
         BaseScreen currentScreen;
+        BaseScreen previousScreen;
 
         public override void LoadContent()
         {
-            currentScreen = new TitleScreen();
-            getScreenInfo(currentScreen);
-            AddGameObject(new SplashImage(LoadTexture(screenTexture)));
+            ChangeScreen(new TitleScreen());
             _menuArrow = new MenuArrowSprite(LoadTexture(titleScreenArrow));
             AddGameObject(_menuArrow);
 
             _menuArrow.Position = new Vector2(menuLocationArrayX[0], menuLocationArrayY[0]);
         }
 
-        public void getScreenInfo(BaseScreen screen)
+        public void ChangeScreen(BaseScreen screen)
         {
+            previousScreen = currentScreen;
+            currentScreen = screen;
             this.screenTexture = screen.screenTexture;
             this.menuLocationArrayX = screen.menuLocationArrayX;
             this.menuLocationArrayY = screen.menuLocationArrayY;
             this.menuNavigatorXCap = screen.menuNavigatorXCap;
             this.menuNavigatorYCap = screen.menuNavigatorYCap;
+            AddGameObject(new SplashImage(LoadTexture(screenTexture)));
+            if (previousScreen != null)
+            {
+                RemoveGameObject(new SplashImage(LoadTexture(previousScreen.screenTexture)));
+            }
         }
         public override void HandleInput(Microsoft.Xna.Framework.GameTime gameTime)
         {
@@ -60,6 +66,25 @@ namespace SpooninDrawer.States.Splash
                 {
                     SwitchState(new GameplayState());
                 }
+                if (cmd is SplashInputCommand.SettingsSelect) 
+                {
+                    ChangeScreen(new SettingsScreen());
+                }
+                if (cmd is SplashInputCommand.BackSelect) 
+                {
+                    if (previousScreen != null)
+                    {
+                        ChangeScreen(previousScreen);
+                    }
+                    else
+                    {
+                        menuNavigatorY = 4;
+                    }
+                }
+                if (cmd is SplashInputCommand.ExitSelect)
+                {
+                    NotifyEvent(new BaseGameStateEvent.GameQuit());
+                }
                 if (cmd is SplashInputCommand.MenuMoveUp)
                 {
                     menuNavigatorY--;
@@ -72,6 +97,11 @@ namespace SpooninDrawer.States.Splash
                 KeepArrowinBound(ref menuNavigatorY, menuNavigatorYCap);
 
             });
+        }
+        public string GetCommandState()
+        {
+            string holder = currentScreen.GetMenuCommand(menuNavigatorX, menuNavigatorY);
+            return holder;
         }
         private void KeepArrowinBound(ref int currentArrowPosition, int maxArrowPostion)
         {
@@ -92,7 +122,7 @@ namespace SpooninDrawer.States.Splash
 
         protected override void SetInputManager()
         {
-            InputManager = new InputManager(new SplashInputMapper());
+            InputManager = new InputManager(new SplashInputMapper(this));
         }
     }
 }

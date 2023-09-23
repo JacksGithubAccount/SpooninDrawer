@@ -32,7 +32,10 @@ namespace SpooninDrawer
          * -added menu arrow and got arrow to move around title screen, also make arrow loop back around when going past first and last option
          * -trying to polymorph screens; solved using an interface for base screen
          * 9/21/2023
-         * -
+         * -need to make enter key context sensitive on title screen
+         * 9/22/2023
+         * -added start settings and exit, also a back button, no need for load yet
+         * -will need input keys
          */
     }
 }

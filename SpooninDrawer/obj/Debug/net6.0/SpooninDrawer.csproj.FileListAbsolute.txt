@@ -33,3 +33,4 @@ C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Content
 C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Content\sounds\empty.xnb
 C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Content\Sprites\Animations\PlayerSpriteSheet - Copy.xnb
 C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Content\Sprites\Animations\PlayerSpriteSheet.xnb
+C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Content\Menu\SettingsScreen.xnb
