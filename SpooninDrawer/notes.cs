@@ -35,7 +35,13 @@ namespace SpooninDrawer
          * -need to make enter key context sensitive on title screen
          * 9/22/2023
          * -added start settings and exit, also a back button, no need for load yet
-         * -will need input keys
+         * -will need input keys, maybe? unsure, future consideration
+         * 9/23/2023
+         * -maybe time to start on map?
+         * 9/25/2023
+         * -rmoved a null check in screen and added empty screen to load in place of null
+         * -added FPS checker
+         * -Spritefont issue where nothing would print, turns out the <end> variable in the spritefont needs to be 126 to allow all characters
          */
     }
 }

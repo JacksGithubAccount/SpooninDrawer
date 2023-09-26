@@ -58,10 +58,12 @@ namespace SpooninDrawer.Engine.States.Gameplay
         private TimeSpan _lastBulletShotAt;
         private TimeSpan _lastMissileShotAt;
 
-
+        private const string StatsFont = "Fonts/Stats";
+        private StatsObject _statsText;
 
         public override void LoadContent()
         {
+            _debug = true;
             //_explosionTexture = LoadTexture(ExplosionTexture);
 
             _playerSprite = new PlayerSprite(LoadTexture(PlayerFighter));
@@ -70,7 +72,12 @@ namespace SpooninDrawer.Engine.States.Gameplay
             //var bulletSound = LoadSound(BulletSound);
             //var missileSound = LoadSound(MissileSound);
 
-
+            _statsText = new StatsObject(LoadFont(StatsFont));
+            _statsText.Position = new Vector2(10, 10);
+            if (_debug)
+            {
+                AddGameObject(_statsText);
+            }
             // load soundtracks into sound manager
             //var track1 = LoadSound(Soundtrack1).CreateInstance();
             //var track2 = LoadSound(Soundtrack2).CreateInstance();
@@ -130,6 +137,10 @@ namespace SpooninDrawer.Engine.States.Gameplay
 
             DetectCollisions();
 
+            if (_debug)
+            {
+                _statsText.Update(gameTime);
+            }
             // get rid of bullets and missiles that have gone out of view
         }
 

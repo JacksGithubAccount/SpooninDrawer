@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SpooninDrawer.Engine.States;
+using SpooninDrawer.Objects;
 using SpooninDrawer.States;
 
 namespace SpooninDrawer.Engine
@@ -21,6 +22,7 @@ namespace SpooninDrawer.Engine
         private float _designedResolutionAspectRatio;
 
         private BaseGameState _firstGameState;
+
 
         public MainGame(int width, int height, BaseGameState firstGameState)
         {

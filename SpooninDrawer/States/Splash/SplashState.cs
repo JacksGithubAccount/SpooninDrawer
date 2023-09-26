@@ -12,6 +12,7 @@ using Microsoft.Xna.Framework;
 using SpooninDrawer.Engine.Input.Base;
 using SpooninDrawer.Engine.States.Gameplay;
 using SpooninDrawer.Engine.Objects;
+using SpooninDrawer.Objects.Screens;
 
 namespace SpooninDrawer.States.Splash
 {
@@ -41,7 +42,7 @@ namespace SpooninDrawer.States.Splash
 
         public void ChangeScreen(BaseScreen screen)
         {
-            previousScreen = currentScreen;
+            previousScreen = currentScreen ?? new EmptyScreen();
             currentScreen = screen;
             this.screenTexture = screen.screenTexture;
             this.menuLocationArrayX = screen.menuLocationArrayX;
@@ -49,10 +50,7 @@ namespace SpooninDrawer.States.Splash
             this.menuNavigatorXCap = screen.menuNavigatorXCap;
             this.menuNavigatorYCap = screen.menuNavigatorYCap;
             AddGameObject(new SplashImage(LoadTexture(screenTexture)));
-            if (previousScreen != null)
-            {
-                RemoveGameObject(new SplashImage(LoadTexture(previousScreen.screenTexture)));
-            }
+            RemoveGameObject(new SplashImage(LoadTexture(previousScreen.screenTexture)));            
         }
         public override void HandleInput(Microsoft.Xna.Framework.GameTime gameTime)
         {

@@ -14,6 +14,12 @@ namespace SpooninDrawer.Engine.Objects
     {
         protected SpriteFont _font;
 
+        public BaseTextObject() { }
+        public BaseTextObject(SpriteFont font)
+        {
+            _font = font;
+        }
+
         public string Text { get; set; }
 
         public override void Render(SpriteBatch spriteBatch)
