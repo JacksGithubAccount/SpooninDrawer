@@ -12,7 +12,7 @@ namespace SpooninDrawer.Objects
 {
     public class PlayerSprite : BaseGameObject
     {
-        private const float PlayerSpeed = 10.0f;
+        private float PlayerSpeed = 10.0f; //velocity in units per seconds, so 600 units per second (10.0 times 60)
 
         private const int BB1PosX = 29;
         private const int BB1PosY = 2;
@@ -140,6 +140,7 @@ namespace SpooninDrawer.Objects
 
         public void Update(GameTime gametime)
         {
+            PlayerSpeed = (float)(600 * gametime.ElapsedGameTime.TotalSeconds);
             if (_currentAnimation != null)
             {
                 _currentAnimation.Update(gametime);

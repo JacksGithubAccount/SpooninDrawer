@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using SpooninDrawer.Engine.States;
 using SpooninDrawer.Objects;
 using SpooninDrawer.States;
+using System;
 
 namespace SpooninDrawer.Engine
 {
@@ -23,6 +24,7 @@ namespace SpooninDrawer.Engine
 
         private BaseGameState _firstGameState;
 
+        private int targetFPS = 60;
 
         public MainGame(int width, int height, BaseGameState firstGameState)
         {
@@ -43,9 +45,14 @@ namespace SpooninDrawer.Engine
         /// </summary>
         protected override void Initialize()
         {
+            //controls FPS
+            this.IsFixedTimeStep = true;
+            this.TargetElapsedTime = TimeSpan.FromSeconds(1.0f / targetFPS);
+
             graphics.PreferredBackBufferWidth = _DesignedResolutionWidth;
             graphics.PreferredBackBufferHeight = _DesignedResolutionHeight;
             graphics.IsFullScreen = false;
+            graphics.SynchronizeWithVerticalRetrace = false;
             graphics.ApplyChanges();
 
             _renderTarget = new RenderTarget2D(graphics.GraphicsDevice, _DesignedResolutionWidth, _DesignedResolutionHeight, false,

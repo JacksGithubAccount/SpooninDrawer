@@ -61,7 +61,7 @@ namespace SpooninDrawer.Objects
                 MinFPS = FPS;
                 MaxFPS = FPS;
             }
-            Text = $"FPS: {FPS} \n" + $"AvgFPS: {AverageFPS} \n" + $"Running Slowly: {IsRunningSlowly}  \n" + $"Nb Updates: {NbUpdateCalled}  \n" + $"Nb Draws: {NbDrawCalled}";
+            Text = $"FPS: {FPS} \n" + $"AvgFPS: {AverageFPS} \n" + $"Running Slowly: {IsRunningSlowly}  \n" + $"Nb Updates: {NbUpdateCalled}  \n" + $"Nb Draws: {NbDrawCalled}" + $"Total Game Time: {gameTime.ElapsedGameTime.TotalSeconds}";
         }
         public override void Render(SpriteBatch spriteBatch)
         {

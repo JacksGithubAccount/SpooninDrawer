@@ -42,6 +42,8 @@ namespace SpooninDrawer
          * -rmoved a null check in screen and added empty screen to load in place of null
          * -added FPS checker
          * -Spritefont issue where nothing would print, turns out the <end> variable in the spritefont needs to be 126 to allow all characters
+         * 9/26/2023
+         * -Added way to change FPS and player movement is now the same regardless of FPS.
          */
     }
 }
