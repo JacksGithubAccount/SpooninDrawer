@@ -44,6 +44,9 @@ namespace SpooninDrawer
          * -Spritefont issue where nothing would print, turns out the <end> variable in the spritefont needs to be 126 to allow all characters
          * 9/26/2023
          * -Added way to change FPS and player movement is now the same regardless of FPS.
+         * 9/28/2023
+         * -Added object pool
+         * -
          */
     }
 }

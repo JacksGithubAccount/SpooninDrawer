@@ -23,6 +23,9 @@ namespace SpooninDrawer.Engine.Objects
         public event EventHandler<BaseGameStateEvent> OnObjectChanged;
 
         public bool Destroyed { get; private set; }
+        public bool Active { get; protected set; }
+        public float Angle { get; set; }
+        public Vector2 Direction { get; set; }
 
         public virtual int Width { get { return _texture.Width; } }
         public virtual int Height { get { return _texture.Height; } }
@@ -49,16 +52,35 @@ namespace SpooninDrawer.Engine.Objects
                 return _boundingBoxes;
             }
         }
+        public BaseGameObject(Texture2D texture)
+        {
+            _texture = texture;
+            Initialize();
+        }
+
+        public virtual void Initialize()
+        {
+            Angle = 0.0f;
+            Direction = new Vector2(0, 0);
+            Position = Vector2.One;
+        }
 
         public virtual void OnNotify(BaseGameStateEvent gameEvent) { }
 
         public virtual void Render(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_texture, _position, Color.White);
+            if (Active)
+            {
+                spriteBatch.Draw(_texture, _position, Color.White);
+            }
         }
 
         public void RenderBoundingBoxes(SpriteBatch spriteBatch)
         {
+            if (!Active)
+            {
+                return;
+            }
             if (_boundingBoxTexture == null)
             {
                 CreateBoundingBoxTexture(spriteBatch.GraphicsDevice);
@@ -74,6 +96,15 @@ namespace SpooninDrawer.Engine.Objects
         {
             Destroyed = true;
         }
+        public virtual void Activate()
+        {
+            Active = true;
+        }
+
+        public virtual void Deactivate()
+        {
+            Active = false;
+        }
 
         public void SendEvent(BaseGameStateEvent e)
         {
@@ -84,7 +115,13 @@ namespace SpooninDrawer.Engine.Objects
         {
             _boundingBoxes.Add(bb);
         }
+        protected Vector2 CalculateDirection(float angleOffset = 0.0f)
+        {
+            Direction = new Vector2((float)Math.Cos(Angle - angleOffset), (float)Math.Sin(Angle - angleOffset));
+            Direction.Normalize();
 
+            return Direction;
+        }
         private void CreateBoundingBoxTexture(GraphicsDevice graphicsDevice)
         {
             _boundingBoxTexture = new Texture2D(graphicsDevice, 1, 1);
