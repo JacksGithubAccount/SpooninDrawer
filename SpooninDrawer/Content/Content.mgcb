@@ -10,6 +10,7 @@
 
 #-------------------------------- References --------------------------------#
 
+/reference:..\..\..\PipelineExtensions\PipelineExtensions\bin\Release\net6.0\PipelineExtensions.dll
 
 #---------------------------------- Content ---------------------------------#
 
