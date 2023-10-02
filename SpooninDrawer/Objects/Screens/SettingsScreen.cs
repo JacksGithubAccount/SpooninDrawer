@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpooninDrawer.Objects.Screens
 {
-    public class SettingsScreen : BaseScreen
+    public class SettingsScreen : BaseGameObject, BaseScreen
     {
         enum titleCommands
         {
@@ -30,6 +30,7 @@ namespace SpooninDrawer.Objects.Screens
         {
 
         }
+
     }
 
 

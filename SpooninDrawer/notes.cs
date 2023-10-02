@@ -46,6 +46,12 @@ namespace SpooninDrawer
          * -Added way to change FPS and player movement is now the same regardless of FPS.
          * 9/28/2023
          * -Added object pool
+         * 9/30/2023
+         * -added pipeline extension as a separate project then added through content pipeline
+         * 10/1/2023
+         * -doing same as last time, but for animations
+         * -somehow broke BaseGameObject and I had to add an empty constructor to it, now the title screen doesn't load.
+         * -implementation of object pool broke it, the render method activate bool check in base game object is doing it
          * -
          */
     }

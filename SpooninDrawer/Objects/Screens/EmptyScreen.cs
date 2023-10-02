@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SpooninDrawer.Objects.Screens
 {
-    public class EmptyScreen : BaseScreen
+    public class EmptyScreen : BaseGameObject, BaseScreen
     {
         enum titleCommands
         {

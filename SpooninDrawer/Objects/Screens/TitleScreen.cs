@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace SpooninDrawer.Objects.Screens
 {
-    public class TitleScreen : BaseScreen
+    public class TitleScreen : BaseGameObject, BaseScreen
     {
         enum titleCommands
         {
@@ -35,6 +35,7 @@ namespace SpooninDrawer.Objects.Screens
             menuLocationArrayY = new int[4] { 310, 410, 490, 590 };
             menuNavigatorXCap = 0;
             menuNavigatorYCap = 3;
+            Activate();
         }
 
         public string GetMenuCommand(int x, int y)
@@ -42,5 +43,6 @@ namespace SpooninDrawer.Objects.Screens
             var holder = (titleCommands)y;
             return holder.ToString();
         }
+
     }
 }

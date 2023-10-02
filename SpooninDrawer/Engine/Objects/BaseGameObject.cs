@@ -52,6 +52,7 @@ namespace SpooninDrawer.Engine.Objects
                 return _boundingBoxes;
             }
         }
+        public BaseGameObject() { Initialize(); }
         public BaseGameObject(Texture2D texture)
         {
             _texture = texture;

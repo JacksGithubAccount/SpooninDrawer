@@ -50,6 +50,7 @@ namespace SpooninDrawer.States.Splash
             this.menuNavigatorXCap = screen.menuNavigatorXCap;
             this.menuNavigatorYCap = screen.menuNavigatorYCap;
             AddGameObject(new SplashImage(LoadTexture(screenTexture)));
+            //screen.Activate();
             RemoveGameObject(new SplashImage(LoadTexture(previousScreen.screenTexture)));            
         }
         public override void HandleInput(Microsoft.Xna.Framework.GameTime gameTime)
