@@ -44,6 +44,10 @@ namespace SpooninDrawer.Engine.Objects
                 }
             }
         }
+        public string getTextureName()
+        {
+            return _texture.ToString();
+        }
 
         public List<BoundingBox> BoundingBoxes
         {

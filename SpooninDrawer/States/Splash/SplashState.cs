@@ -49,9 +49,21 @@ namespace SpooninDrawer.States.Splash
             this.menuLocationArrayY = screen.menuLocationArrayY;
             this.menuNavigatorXCap = screen.menuNavigatorXCap;
             this.menuNavigatorYCap = screen.menuNavigatorYCap;
-            AddGameObject(new SplashImage(LoadTexture(screenTexture)));
-            //screen.Activate();
-            RemoveGameObject(new SplashImage(LoadTexture(previousScreen.screenTexture)));            
+            SplashImage currentSplash = new SplashImage(LoadTexture(screenTexture));
+            BaseGameObject holder = getScreenExist(currentSplash.getTextureName());
+            if (holder != null) 
+            {
+                currentSplash.Activate();
+            }
+            else
+            {
+                AddGameObject(currentSplash);
+                currentSplash.Activate();
+            }
+            BaseGameObject previousholder = getScreenExist(previousScreen.screenTexture);
+            //SplashImage previousSplash = new SplashImage(LoadTexture(previousScreen.screenTexture));
+            //RemoveGameObject(previousSplash);
+            previousholder?.Deactivate();
         }
         public override void HandleInput(Microsoft.Xna.Framework.GameTime gameTime)
         {

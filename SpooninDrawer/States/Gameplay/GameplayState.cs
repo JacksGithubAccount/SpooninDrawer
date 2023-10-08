@@ -2,9 +2,7 @@
 using Microsoft.Xna.Framework.Input;
 using SpooninDrawer.Engine.Input;
 using SpooninDrawer.Objects;
-using SpooninDrawer.Engine.States.Gameplay;
 using SpooninDrawer.Engine.Input.Base;
-using SpooninDrawer.Engine.Input;
 using SpooninDrawer.Engine.States;
 
 using System;

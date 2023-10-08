@@ -52,7 +52,12 @@ namespace SpooninDrawer
          * -doing same as last time, but for animations
          * -somehow broke BaseGameObject and I had to add an empty constructor to it, now the title screen doesn't load.
          * -implementation of object pool broke it, the render method activate bool check in base game object is doing it
-         * -
+         * 10/7/2023
+         * -XML importing is not working. I can't seem to figure it out. Will skip for now.
+         * -Got screen to work, instead of creating the splash screen in the add game object method, instantiated it as own varible and activated it
+         * -arrow disappears on changing menu screens, the new screen is placed on top of the arrow
+         * -added several methods to help with the object pool integration, but now all screens that deactivate don't get activated
+         * -.
          */
     }
 }

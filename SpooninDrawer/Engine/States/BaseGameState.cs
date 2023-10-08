@@ -11,6 +11,7 @@ using SpooninDrawer.Engine.Objects;
 using SpooninDrawer.Engine.Input.Base;
 using Microsoft.Xna.Framework.Audio;
 using SpooninDrawer.Engine.Sound;
+using SpooninDrawer.Objects.Screens;
 
 namespace SpooninDrawer.Engine.States
 {
@@ -92,6 +93,19 @@ namespace SpooninDrawer.Engine.States
         protected void AddGameObject(BaseGameObject gameObject)
         {
             _gameObjects.Add(gameObject);
+        }
+
+        protected bool isGameObjectExist(BaseGameObject gameObject)
+        {
+            return _gameObjects.Contains(gameObject);
+        }
+
+        protected BaseGameObject getScreenExist(string screenName)
+        {
+            BaseGameObject holder;
+            holder = _gameObjects.Find(x => x.getTextureName().Contains(screenName));
+
+            return holder;
         }
 
         protected void RemoveGameObject(BaseGameObject gameObject)
