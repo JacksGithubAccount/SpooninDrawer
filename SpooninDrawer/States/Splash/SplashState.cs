@@ -35,6 +35,7 @@ namespace SpooninDrawer.States.Splash
         {
             ChangeScreen(new TitleScreen());
             _menuArrow = new MenuArrowSprite(LoadTexture(titleScreenArrow));
+            _menuArrow.zIndex = 2;
             AddGameObject(_menuArrow);
 
             _menuArrow.Position = new Vector2(menuLocationArrayX[0], menuLocationArrayY[0]);
@@ -51,20 +52,20 @@ namespace SpooninDrawer.States.Splash
             this.menuNavigatorYCap = screen.menuNavigatorYCap;
             SplashImage currentSplash = new SplashImage(LoadTexture(screenTexture));
             BaseGameObject holder = getScreenExist(currentSplash.getTextureName());
+            BaseGameObject previousholder = getScreenExist(previousScreen.screenTexture);
             if (holder != null) 
             {
-                currentSplash.Activate();
+                //draws current screen on top of previous screen
+                holder.zIndex = 1;
+                previousholder.zIndex = 0;
             }
             else
             {
                 AddGameObject(currentSplash);
                 currentSplash.Activate();
-            }
-            BaseGameObject previousholder = getScreenExist(previousScreen.screenTexture);
-            //SplashImage previousSplash = new SplashImage(LoadTexture(previousScreen.screenTexture));
-            //RemoveGameObject(previousSplash);
-            previousholder?.Deactivate();
+            }        
         }
+
         public override void HandleInput(Microsoft.Xna.Framework.GameTime gameTime)
         {
 
@@ -72,7 +73,16 @@ namespace SpooninDrawer.States.Splash
 
             InputManager.GetCommands(cmd =>
             {
-
+                if (cmd is SplashInputCommand.TestMenuButton)
+                {
+                    BaseGameObject holder = getScreenExist(screenTexture);
+                    holder.Activate();
+                }
+                if (cmd is SplashInputCommand.TestMenuButton2)
+                {
+                    BaseGameObject holder = getScreenExist(screenTexture);
+                    holder.Deactivate();
+                }
                 if (cmd is SplashInputCommand.GameSelect)
                 {
                     SwitchState(new GameplayState());

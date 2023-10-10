@@ -44,6 +44,14 @@ namespace SpooninDrawer.States.Splash
                         break;
                 }
             }
+            if (state.IsKeyDown(Keys.T) && HasBeenPressed(Keys.T))
+            {
+                commands.Add(new TestMenuButton());
+            }
+            if (state.IsKeyDown(Keys.R) && HasBeenPressed(Keys.R))
+            {
+                commands.Add(new TestMenuButton2());
+            }
             if (state.IsKeyDown(Keys.Escape) && HasBeenPressed(Keys.Escape))
             {
                 commands.Add(new BackSelect());

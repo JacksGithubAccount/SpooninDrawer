@@ -57,7 +57,10 @@ namespace SpooninDrawer
          * -Got screen to work, instead of creating the splash screen in the add game object method, instantiated it as own varible and activated it
          * -arrow disappears on changing menu screens, the new screen is placed on top of the arrow
          * -added several methods to help with the object pool integration, but now all screens that deactivate don't get activated
-         * -.
+         * 10/9/2023
+         * -Is there a need to disable? Only one screen gets added to the list, so just make that the top one. right? 
+         * -Doesn't work. top screen is still drawn to the top
+         * -Fixed, all I had to do was use the zIndex to make the screen render on top of the other one.
          */
     }
 }
