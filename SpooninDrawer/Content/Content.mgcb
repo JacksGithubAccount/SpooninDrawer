@@ -14,6 +14,11 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Animations/Player/side_walk.xml
+/importer:XmlImporter
+/processor:PassThroughProcessor
+/build:Animations/Player/side_walk.xml
+
 #begin Fonts/Stats.spritefont
 /importer:FontDescriptionImporter
 /processor:LocalizedFontProcessor
