@@ -11,13 +11,9 @@
 #-------------------------------- References --------------------------------#
 
 /reference:..\..\..\PipelineExtensions\PipelineExtensions\bin\Release\net6.0\PipelineExtensions.dll
+/reference:..\..\Engine2DPipelineExtensions\bin\Release\netstandard2.0\Engine2DPipelineExtensions.dll
 
 #---------------------------------- Content ---------------------------------#
-
-#begin Animations/Player/side_walk.xml
-/importer:XmlImporter
-/processor:PassThroughProcessor
-/build:Animations/Player/side_walk.xml
 
 #begin Fonts/Stats.spritefont
 /importer:FontDescriptionImporter
