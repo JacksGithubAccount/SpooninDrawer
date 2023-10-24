@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<XnaContent xmlns:PipelineExtensions="Engine2D.PipelineExtensions">
- <Asset Type="Engine2D.PipelineExtensions:AnimationData">
+<XnaContent xmlns:ns="Microsoft.Xna.Framework">
+ <Asset Type="Engine2D.PipelineExtensions.AnimationData">
  <AnimationSpeed>3</AnimationSpeed>
  <IsLooping>false</IsLooping>
  <Frames>

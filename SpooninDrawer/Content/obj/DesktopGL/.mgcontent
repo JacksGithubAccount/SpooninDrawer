@@ -4,6 +4,8 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Animations/Player/Broadsword.xml</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Animations/Player/side_walk.xml</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Fonts/Stats.spritefont</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/EmptyScreen.png</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/SettingsScreen.png</File>
@@ -19,6 +21,8 @@
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Sprites/Animations/PlayerSpriteSheet.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -16,6 +16,7 @@ using Microsoft.Xna.Framework.Audio;
 using SpooninDrawer.Engine.Objects;
 using SpooninDrawer.Objects.Text;
 using SpooninDrawer.States.Gameplay;
+using System.Reflection.Metadata;
 
 namespace SpooninDrawer.Engine.States.Gameplay
 {
@@ -65,7 +66,6 @@ namespace SpooninDrawer.Engine.States.Gameplay
             //_explosionTexture = LoadTexture(ExplosionTexture);
 
             _playerSprite = new PlayerSprite(LoadTexture(PlayerFighter));
-
             // load sound effects and register in the sound manager
             //var bulletSound = LoadSound(BulletSound);
             //var missileSound = LoadSound(MissileSound);

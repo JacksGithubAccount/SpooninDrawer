@@ -44,15 +44,10 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
-            "MonoGame.Framework.Content.Pipeline": {
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.8.0.1641, )"
-            },
             "MonoGame.Framework.DesktopGL": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.8.0.1641, )"
+              "version": "[3.8.1.303, )"
             },
             "NETStandard.Library": {
               "suppressParent": "All",

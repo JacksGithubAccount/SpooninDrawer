@@ -57,7 +57,10 @@ namespace SpooninDrawer.Engine.States
             UpdateGameState(gameTime);
             _soundManager.PlaySoundtrack();
         }
-
+        protected AnimationData LoadAnimation(string animationName)
+        {
+            return _contentManager.Load<AnimationData>(animationName);
+        }
         protected Texture2D LoadTexture(string textureName)
         {
             return _contentManager.Load<Texture2D>(textureName);

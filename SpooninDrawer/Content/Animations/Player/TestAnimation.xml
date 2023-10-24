@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<XnaContent xmlns:ns="Microsoft.Xna.Framework">
+    <Asset Type="MonoGameXmlContent.Test">
+        <Name>Broadsword</Name>
+        <Description>A heavy sword meant for cutting rather than thrusting.</Description>
+        <Cost>450</Cost>
+    </Asset>
+</XnaContent>

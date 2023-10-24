@@ -2,14 +2,14 @@
 
 namespace Engine2D.PipelineExtensions
 {
-    public class AnimationData
+    class AnimationData
     {
         public int AnimationSpeed;
         public bool IsLooping;
         public List<AnimationFrameData> Frames;
     }
 
-    public class AnimationFrameData
+    class AnimationFrameData
     {
         public int X;
         public int Y;

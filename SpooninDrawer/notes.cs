@@ -63,6 +63,10 @@ namespace SpooninDrawer
          * -Fixed, all I had to do was use the zIndex to make the screen render on top of the other one.
          * 10/10/2023
          * -tryin XML stuff again, same issue
+         * 10/23/2023
+         * -Figured out the XML problem. Book I was using has <Asset Type="Engine2D.PipelineExtensions:AnimationData"> which could not resolve
+         * -rb whitaker's site showed <Asset Type="MonoGameXmlContent.Weapon"> for their example. Changing : to . allowed it to build
+         * -
          */
     }
 }
