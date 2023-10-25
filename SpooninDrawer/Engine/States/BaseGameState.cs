@@ -12,6 +12,7 @@ using SpooninDrawer.Engine.Input.Base;
 using Microsoft.Xna.Framework.Audio;
 using SpooninDrawer.Engine.Sound;
 using SpooninDrawer.Objects.Screens;
+using Engine2D.PipelineExtensions;
 
 namespace SpooninDrawer.Engine.States
 {
@@ -51,15 +52,14 @@ namespace SpooninDrawer.Engine.States
         {
             _contentManager.Unload();
         }
-
+        protected AnimationData LoadAnimation(string animationName)
+        {
+            return _contentManager.Load<AnimationData>(animationName);
+        }
         public void Update(GameTime gameTime)
         {
             UpdateGameState(gameTime);
             _soundManager.PlaySoundtrack();
-        }
-        protected AnimationData LoadAnimation(string animationName)
-        {
-            return _contentManager.Load<AnimationData>(animationName);
         }
         protected Texture2D LoadTexture(string textureName)
         {
