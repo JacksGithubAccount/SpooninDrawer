@@ -21,7 +21,7 @@ namespace SpooninDrawer.States.Dev
 
         public override void LoadContent()
         {
-            _player = new PlayerSprite(LoadTexture(playerSpriteSheet));
+            //_player = new PlayerSprite(LoadTexture(playerSpriteSheet));
             _player.Position = new Vector2(200, 400);
             AddGameObject(_player);
 

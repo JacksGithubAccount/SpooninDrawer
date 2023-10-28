@@ -1,7 +1,10 @@
-﻿using SpooninDrawer.Engine;
+﻿using SpooninDrawer.Content;
+using SpooninDrawer.Engine;
 using SpooninDrawer.States.Splash;
 using System;
+using System.Globalization;
 using System.Xml;
+
 
 namespace SpooninDrawer
 {
@@ -13,12 +16,19 @@ namespace SpooninDrawer
         private const int WIDTH = 1280;
         private const int HEIGHT = 720;
 
+        private const string ENGLISH = "en";
+        private const string FRENCH = "fr";
+        private const string JAPANESE = "ja";
+
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         static void Main()
         {
+            RStrings.Culture = CultureInfo.CurrentCulture;
+            //RStrings.Culture = CultureInfo.GetCultureInfo(JAPANESE); //to switch language for RString resource
             using (var game = new MainGame(WIDTH, HEIGHT, new SplashState()))
                 game.Run();
         }

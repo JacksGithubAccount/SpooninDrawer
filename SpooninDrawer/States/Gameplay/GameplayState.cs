@@ -24,6 +24,9 @@ namespace SpooninDrawer.Engine.States.Gameplay
     {
         private const string BackgroundTexture = "Sprites/Barren";
         private const string PlayerFighter = "Sprites/Animations/PlayerSpriteSheet";
+        private const string PlayerAnimationTurnLeft = "Animations/Player/left_walk";
+        private const string PlayerAnimationTurnRight = "Animations/Player/right_walk";
+        private const string PlayerAnimationIdle = "Animations/Player/idle";
         //rivate const string ExplosionTexture = "Sprites/explosion";
 
         private const string TextFont = "Fonts/Lives";
@@ -51,13 +54,13 @@ namespace SpooninDrawer.Engine.States.Gameplay
         private PlayerSprite _playerSprite;
         private bool _playerDead;
         private bool _gameOver = false;
-
+        
         private bool _isShootingBullets;
         private bool _isShootingMissile;
         private TimeSpan _lastBulletShotAt;
         private TimeSpan _lastMissileShotAt;
 
-        private const string StatsFont = "Fonts/Stats";
+        private const string StatsFont = "Fonts/Stats";       
         private StatsObject _statsText;
 
         public override void LoadContent()
@@ -65,7 +68,10 @@ namespace SpooninDrawer.Engine.States.Gameplay
             _debug = true;
             //_explosionTexture = LoadTexture(ExplosionTexture);
 
-            _playerSprite = new PlayerSprite(LoadTexture(PlayerFighter));
+            var turnLeftAnimation = LoadAnimation(PlayerAnimationTurnLeft);
+            var turnRightAnimation = LoadAnimation(PlayerAnimationTurnRight);
+            var idelAnimation = LoadAnimation(PlayerAnimationIdle);
+            _playerSprite = new PlayerSprite(LoadTexture(PlayerFighter), turnLeftAnimation, turnRightAnimation, idelAnimation);
             // load sound effects and register in the sound manager
             //var bulletSound = LoadSound(BulletSound);
             //var missileSound = LoadSound(MissileSound);

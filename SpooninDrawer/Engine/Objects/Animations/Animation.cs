@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using Engine2D.PipelineExtensions;
+using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,17 @@ namespace SpooninDrawer.Engine.Objects.Animations
         private int _lifespan = -1;
         private bool _isLoop = false;
 
+        public Animation(AnimationData data)
+        {
+            _isLoop = data.IsLooping;
+            foreach (var frame in data.Frames)
+            {
+                AddFrame(
+                new Rectangle(frame.X, frame.Y, frame.CellWidth, frame.
+                CellHeight),
+                data.AnimationSpeed);
+            }
+        }
         public int Lifespan
         {
             get

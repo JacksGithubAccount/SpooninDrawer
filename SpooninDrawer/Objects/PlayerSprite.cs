@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Engine2D.PipelineExtensions;
+using Microsoft.Xna.Framework.Content;
 
 namespace SpooninDrawer.Objects
 {
@@ -45,7 +47,22 @@ namespace SpooninDrawer.Objects
         public override int Height => AnimationCellHeight;
         public override int Width => AnimationCellWidth;
 
-        public PlayerSprite(Texture2D texture)
+        public PlayerSprite(Texture2D texture, AnimationData turnLeftAnimation, AnimationData turnRightAnimation, AnimationData idleAnimation) : base(texture)
+        {
+            AddBoundingBox(new Engine.Objects.BoundingBox(new Vector2(BB1PosX, BB1PosY), BB1Width, BB1Height));
+            AddBoundingBox(new Engine.Objects.BoundingBox(new Vector2(BB2PosX, BB2PosY), BB2Width, BB2Height));
+
+            _idleRectangle = new Rectangle(348, 0, AnimationCellWidth, AnimationCellHeight);
+
+            _idleAnimation = new Animation(idleAnimation);
+            _turnLeftAnimation = new Animation(turnLeftAnimation);
+            _turnRightAnimation = new Animation(turnRightAnimation);
+            _leftToCenterAnimation = _turnLeftAnimation.ReverseAnimation;
+            _rightToCenterAnimation = _turnRightAnimation.ReverseAnimation;
+
+            //CurrentUpSpeed = _playerNormalUpSpeed;
+        }
+        /*public PlayerSprite(Texture2D texture)
         {
             _texture = texture;
             AddBoundingBox(new Engine.Objects.BoundingBox(new Vector2(BB1PosX, BB1PosY), BB1Width, BB1Height));
@@ -73,7 +90,7 @@ namespace SpooninDrawer.Objects
 
             _leftToCenterAnimation = _turnLeftAnimation.ReverseAnimation;
             _rightToCenterAnimation = _turnRightAnimation.ReverseAnimation;
-        }
+        }*/
 
         public void StopMoving()
         {

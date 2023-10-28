@@ -66,6 +66,9 @@ namespace SpooninDrawer
          * 10/23/2023
          * -Figured out the XML problem. Book I was using has <Asset Type="Engine2D.PipelineExtensions:AnimationData"> which could not resolve
          * -rb whitaker's site showed <Asset Type="MonoGameXmlContent.Weapon"> for their example. Changing : to . allowed it to build
+         * 10/27/2023
+         * -Changed right, left and idle animation data to XML files
+         * -added a resource file to hold string values and added a way to translate/switch between same named resource
          * -
          */
     }

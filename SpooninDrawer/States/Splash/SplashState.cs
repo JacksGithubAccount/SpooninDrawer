@@ -13,6 +13,7 @@ using SpooninDrawer.Engine.Input.Base;
 using SpooninDrawer.Engine.States.Gameplay;
 using SpooninDrawer.Engine.Objects;
 using SpooninDrawer.Objects.Screens;
+using SpooninDrawer.Objects.Text;
 
 namespace SpooninDrawer.States.Splash
 {
@@ -31,9 +32,16 @@ namespace SpooninDrawer.States.Splash
         BaseScreen currentScreen;
         BaseScreen previousScreen;
 
+        private const string TestFont = "Fonts/TestText";
+        TestText _testText;
+
         public override void LoadContent()
         {
+            _testText = new TestText(LoadFont(TestFont));
+            _testText.Position = new Vector2(10.0f, 10.0f); 
+            _testText.zIndex = 3;
             ChangeScreen(new TitleScreen());
+            AddGameObject(_testText);                    
             _menuArrow = new MenuArrowSprite(LoadTexture(titleScreenArrow));
             _menuArrow.zIndex = 2;
             AddGameObject(_menuArrow);

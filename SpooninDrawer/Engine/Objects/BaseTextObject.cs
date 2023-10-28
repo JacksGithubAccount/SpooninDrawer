@@ -13,6 +13,7 @@ namespace SpooninDrawer.Engine.Objects
     public class BaseTextObject : BaseGameObject
     {
         protected SpriteFont _font;
+        protected Color _color = Color.White;
 
         public BaseTextObject() { }
         public BaseTextObject(SpriteFont font)
@@ -24,7 +25,7 @@ namespace SpooninDrawer.Engine.Objects
 
         public override void Render(SpriteBatch spriteBatch)
         {
-            spriteBatch.DrawString(_font, Text, _position, Color.White);
+            spriteBatch.DrawString(_font, Text, _position, _color);
         }
     }
 }
