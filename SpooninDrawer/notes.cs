@@ -69,6 +69,9 @@ namespace SpooninDrawer
          * 10/27/2023
          * -Changed right, left and idle animation data to XML files
          * -added a resource file to hold string values and added a way to translate/switch between same named resource
+         * 10/30/2023
+         * 11/7/23
+         * -installed monogame extended
          * -
          */
     }
