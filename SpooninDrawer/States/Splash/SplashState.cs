@@ -14,11 +14,13 @@ using SpooninDrawer.Engine.States.Gameplay;
 using SpooninDrawer.Engine.Objects;
 using SpooninDrawer.Objects.Screens;
 using SpooninDrawer.Objects.Text;
+using SpooninDrawer.States.Dev;
 
 namespace SpooninDrawer.States.Splash
 {
     public class SplashState : BaseGameState
-    {
+    {   
+        private bool devState = true; //true to turn on Dev state, false for gameplay state
 
         private string screenTexture;
         private const string titleScreenArrow = "Menu/TitleScreenArroww";
@@ -93,7 +95,13 @@ namespace SpooninDrawer.States.Splash
                 }
                 if (cmd is SplashInputCommand.GameSelect)
                 {
-                    SwitchState(new GameplayState());
+                    if (!devState)
+                    {
+                        SwitchState(new GameplayState());
+                    }else
+                    {
+                        SwitchState(new DevState());
+                    }
                 }
                 if (cmd is SplashInputCommand.SettingsSelect) 
                 {

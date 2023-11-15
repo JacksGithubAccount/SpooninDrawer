@@ -1,4 +1,5 @@
 ﻿using SpooninDrawer.Engine.Input.Base;
+using SpooninDrawer.States.Dev;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,12 @@ namespace SpooninDrawer.States.Dev
     public class DevInputCommand : BaseInputCommand
     {
         // Out of Game Commands
-        public class DevQuit : DevInputCommand { }
-        public class DevLeft : DevInputCommand { }
-        public class DevRight : DevInputCommand { }
-        public class DevUp : DevInputCommand { }
-        public class DevDown : DevInputCommand { }
-        public class DevNotMoving : DevInputCommand { }
+        public class GameExit : DevInputCommand { }
+        public class PlayerMoveLeft : DevInputCommand { }
+        public class PlayerMoveRight : DevInputCommand { }
+        public class PlayerMoveUp : DevInputCommand { }
+        public class PlayerMoveDown : DevInputCommand { }
+        public class PlayerStopsMoving : DevInputCommand { }
+        public class PlayerAction : DevInputCommand { }
     }
 }

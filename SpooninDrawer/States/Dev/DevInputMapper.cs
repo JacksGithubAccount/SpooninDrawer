@@ -1,10 +1,12 @@
 ﻿using Microsoft.Xna.Framework.Input;
 using SpooninDrawer.Engine.Input.Base;
+using SpooninDrawer.Engine.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SpooninDrawer.States.Dev;
 
 namespace SpooninDrawer.States.Dev
 {
@@ -16,29 +18,34 @@ namespace SpooninDrawer.States.Dev
 
             if (state.IsKeyDown(Keys.Escape))
             {
-                commands.Add(new DevInputCommand.DevQuit());
+                commands.Add(new DevInputCommand.GameExit());
             }
+
+            if (state.IsKeyDown(Keys.Space))
+            {
+                commands.Add(new DevInputCommand.PlayerAction());
+            }
+
             if (state.IsKeyDown(Keys.Right))
             {
-                commands.Add(new DevInputCommand.DevRight());
+                commands.Add(new DevInputCommand.PlayerMoveRight());
             }
             else if (state.IsKeyDown(Keys.Left))
             {
-                commands.Add(new DevInputCommand.DevLeft());
+                commands.Add(new DevInputCommand.PlayerMoveLeft());
             }
             if (state.IsKeyDown(Keys.Up))
             {
-                commands.Add(new DevInputCommand.DevUp());
+                commands.Add(new DevInputCommand.PlayerMoveUp());
             }
             else if (state.IsKeyDown(Keys.Down))
             {
-                commands.Add(new DevInputCommand.DevDown());
+                commands.Add(new DevInputCommand.PlayerMoveDown());
             }
             if (state.IsKeyUp(Keys.Right) && state.IsKeyUp(Keys.Left) && state.IsKeyUp(Keys.Up) && state.IsKeyUp(Keys.Down))
-            { 
-                commands.Add(new DevInputCommand.DevNotMoving());
+            {
+                commands.Add(new DevInputCommand.PlayerStopsMoving());
             }
-
 
             return commands;
         }

@@ -50,3 +50,5 @@ C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\obj\Debug\net6.0\ja\Spoo
 C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\obj\Debug\net6.0\SpooninDrawer.Content.RStrings.resources
 C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\obj\Debug\net6.0\SpooninDrawer.Content.RStrings.fr.resources
 C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\obj\Debug\net6.0\SpooninDrawer.Content.RStrings.ja.resources
+C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\MonoGame.Extended.dll
+C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Newtonsoft.Json.dll
