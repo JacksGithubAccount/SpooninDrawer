@@ -23,6 +23,8 @@ namespace SpooninDrawer.Engine.States
 
         protected bool _debug = false;
         private ContentManager _contentManager;
+        protected GraphicsDevice _graphicsDevice;
+        protected GameWindow _window;
         protected int _viewportHeight;
         protected int _viewportWidth;
         protected SoundManager _soundManager = new SoundManager();
@@ -31,12 +33,13 @@ namespace SpooninDrawer.Engine.States
 
         protected InputManager InputManager { get; set; }
 
-        public void Initialize(ContentManager contentManager, int viewportWidth, int viewportHeight)
+        public void Initialize(ContentManager contentManager, GameWindow window, GraphicsDevice graphicsDevice)
         {
             _contentManager = contentManager;
-            _viewportHeight = viewportHeight;
-            _viewportWidth = viewportWidth;
-
+            _graphicsDevice = graphicsDevice;
+            _viewportHeight = graphicsDevice.Viewport.Height;
+            _viewportWidth = graphicsDevice.Viewport.Width;
+            _window = window;
             SetInputManager();
         }
 

@@ -120,7 +120,7 @@ namespace SpooninDrawer.Engine
 
             _currentGameState = gameState;
 
-            _currentGameState.Initialize(Content, graphics.GraphicsDevice.Viewport.Width, graphics.GraphicsDevice.Viewport.Height);
+            _currentGameState.Initialize(Content, Window, GraphicsDevice);
 
             _currentGameState.LoadContent();
 
@@ -171,11 +171,11 @@ namespace SpooninDrawer.Engine
 
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
+            //spriteBatch.Begin();
 
             _currentGameState.Render(spriteBatch);
 
-            spriteBatch.End();
+            //spriteBatch.End();
 
             // Now render the scaled content
             graphics.GraphicsDevice.SetRenderTarget(null);

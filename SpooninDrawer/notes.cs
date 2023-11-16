@@ -73,6 +73,11 @@ namespace SpooninDrawer
          * 11/7/23
          * -installed monogame extended
          * 11/14/23
+         * -started on testing camera
+         * 11/15/23
+         * -Got a camera, and centered it on player. The camera only exists in test camera state/
+         * -started on level editor, ran into issue where the overrides aren't working on forms, had to change target framework to 4.8
+         * -properties wouldn't let me do that, had to edit csproj and change target framework to net48 to make it work
          * -
          */
     }

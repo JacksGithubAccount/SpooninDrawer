@@ -14,6 +14,8 @@ namespace SpooninDrawer.Objects
 {
     public class PlayerSprite : BaseGameObject
     {
+        public Vector2 CurrentUpSpeed { get; private set; }
+
         private float PlayerSpeed = 10.0f; //velocity in units per seconds, so 600 units per second (10.0 times 60)
 
         private const int BB1PosX = 29;
