@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpooninDrawer", "SpooninDra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Engine2DPipelineExtensions", "Engine2DPipelineExtensions\Engine2DPipelineExtensions.csproj", "{B7FB99F5-E647-4E22-9A48-320C9A1D8E19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameEditor", "GameEditor\GameEditor.csproj", "{E29AB31D-9BD7-4766-BE30-A3B55EEC6CEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B7FB99F5-E647-4E22-9A48-320C9A1D8E19}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{B7FB99F5-E647-4E22-9A48-320C9A1D8E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7FB99F5-E647-4E22-9A48-320C9A1D8E19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E29AB31D-9BD7-4766-BE30-A3B55EEC6CEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E29AB31D-9BD7-4766-BE30-A3B55EEC6CEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E29AB31D-9BD7-4766-BE30-A3B55EEC6CEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E29AB31D-9BD7-4766-BE30-A3B55EEC6CEB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
