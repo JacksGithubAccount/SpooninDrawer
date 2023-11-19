@@ -4,8 +4,7 @@ using MonoGame.Forms.Controls;
 using MonoGame.Extended;
 using MonoGame.Extended.ViewportAdapters;
 using System;
-using System.Windows.Forms;
-using Microsoft.Xna.Framework.Input;
+using System.Drawing;
 namespace GameEditor
 {
     public class GameControl : MonoGameControl
@@ -13,9 +12,6 @@ namespace GameEditor
         private Texture2D _backgroundRectangle;
         private OrthographicCamera _camera;
         private bool _cameraDrag;
-
-        private int _mouseX;
-        private int _mouseY;
         protected override void Initialize()
         {
             base.Initialize();
@@ -39,37 +35,5 @@ namespace GameEditor
             Color.White);
             base.Draw();
         }
-
-        private void ResetCameraPosition()
-        {
-            _camera.Position = new Vector2(0, Level.LEVEL_LENGTH * TILE_SIZE - ClientSize.Height);
-        }
-
-        protected override void OnMouseUp(MouseEventArgs e)
-        {
-            base.OnMouseUp(e);
-            if (e.Button == MouseButtons.Middle)
-            {
-                _cameraDrag = false;
-            }
-        }
-        protected override void OnMouseMove(MouseEventArgs e)
-        {
-            base.OnMouseMove(e);
-            if (_cameraDrag)
-            {
-                _camera.Move(new Vector2(_mouseX - e.X, _mouseY - e.Y));
-            }
-            _mouseX = e.X;
-            _mouseY = e.Y;
-        }
-        protected override void OnMouseDown(MouseEventArgs e)
-        {
-            base.OnMouseDown(e);
-            if (e.Button == MouseButtons.Middle)
-            {
-                _cameraDrag = true;
-            }
-        }
-
     }
+}

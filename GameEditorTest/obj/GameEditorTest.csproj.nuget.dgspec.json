@@ -1,0 +1,84 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\jckzh\\source\\repos\\SpooninDrawer\\GameEditorTest\\GameEditorTest.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\jckzh\\source\\repos\\SpooninDrawer\\GameEditorTest\\GameEditorTest.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\jckzh\\source\\repos\\SpooninDrawer\\GameEditorTest\\GameEditorTest.csproj",
+        "projectName": "GameEditorTest",
+        "projectPath": "C:\\Users\\jckzh\\source\\repos\\SpooninDrawer\\GameEditorTest\\GameEditorTest.csproj",
+        "packagesPath": "C:\\Users\\jckzh\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\jckzh\\source\\repos\\SpooninDrawer\\GameEditorTest\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jckzh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0-windows7.0": {
+            "targetAlias": "net5.0-windows",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0-windows7.0": {
+          "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "MonoGame.Extended": {
+              "target": "Package",
+              "version": "[3.8.0, )"
+            },
+            "MonoGame.Forms.DX": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "MonoGame.Framework.DesktopGL": {
+              "target": "Package",
+              "version": "[3.8.1.303, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
