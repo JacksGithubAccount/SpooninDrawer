@@ -42,15 +42,15 @@ namespace GameEditor
         public event EventHandler<EventSelectedArgs> OnEventSelected;
         public event EventHandler<EventArgs> OnEventDeselected;
 
-
+        internal IGraphicsDeviceService _graphicsDeviceService;
 
         protected override void Initialize()
         {
             base.Initialize();
-            var graphicsDevice = GraphicsDeviceService.GetGraphicsDevice();
+            GraphicsDevice GraphicsDevice = _graphicsDeviceService.GraphicsDevice;
             _backgroundRectangle = new Texture2D(GraphicsDevice, 1, 1);
             _backgroundRectangle.SetData(new[] { Color.CadetBlue });
-            var viewportAdapter = new DefaultViewportAdapter(Editor.graphics);
+            var viewportAdapter = new DefaultViewportAdapter(Editor.GraphicsDevice);
             _camera = new OrthographicCamera(viewportAdapter);
             ResetCameraPosition();
             _draggedTile = null;

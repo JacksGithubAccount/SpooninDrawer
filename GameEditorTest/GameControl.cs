@@ -1,10 +1,13 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using MonoGame.Forms.Controls;
 using MonoGame.Extended;
+using MonoGame.Extended.TextureAtlases;
 using MonoGame.Extended.ViewportAdapters;
+using MonoGame.Forms.Controls;
 using System;
-using System.Drawing;
+using System.Collections.Generic;
+using System.Windows.Forms;
+
 namespace GameEditor
 {
     public class GameControl : MonoGameControl

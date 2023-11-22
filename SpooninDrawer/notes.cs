@@ -78,7 +78,10 @@ namespace SpooninDrawer
          * -Got a camera, and centered it on player. The camera only exists in test camera state/
          * -started on level editor, ran into issue where the overrides aren't working on forms, had to change target framework to 4.8
          * -properties wouldn't let me do that, had to edit csproj and change target framework to net48 to make it work
-         * -
+         * 11/19/23
+         * -added more stuff to gameeditor, but lots of stuff not working. Says it's not in the Monogame framework? Will need to figure out
+         * 11/21/23
+         * -entered a possible fix to the graphics device not detected. need to test if it works.
          */
     }
 }
