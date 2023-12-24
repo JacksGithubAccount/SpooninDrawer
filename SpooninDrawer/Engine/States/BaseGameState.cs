@@ -13,6 +13,9 @@ using Microsoft.Xna.Framework.Audio;
 using SpooninDrawer.Engine.Sound;
 using SpooninDrawer.Objects.Screens;
 using Engine2D.PipelineExtensions;
+using MonoGame.Extended.Tiled;
+using SpooninDrawer.Engine.Objects.Animations;
+using MonoGame.Extended.Tiled.Renderers;
 
 namespace SpooninDrawer.Engine.States
 {
@@ -54,6 +57,15 @@ namespace SpooninDrawer.Engine.States
         public void UnloadContent()
         {
             _contentManager.Unload();
+        }
+        protected TiledMap LoadTiledMap(string tiledMapName)
+        {
+            return _contentManager.Load<TiledMap>(tiledMapName);
+        }
+        protected TiledMapRenderer GetTiledMapRenderer(TiledMap tiledMap)
+        {
+            TiledMapRenderer _tiledMapRenderer = new TiledMapRenderer(_graphicsDevice, tiledMap);
+            return _tiledMapRenderer;
         }
         protected AnimationData LoadAnimation(string animationName)
         {

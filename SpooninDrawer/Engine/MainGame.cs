@@ -171,11 +171,11 @@ namespace SpooninDrawer.Engine
 
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            //spriteBatch.Begin();
+            spriteBatch.Begin();
 
             _currentGameState.Render(spriteBatch);
 
-            //spriteBatch.End();
+            spriteBatch.End();
 
             // Now render the scaled content
             graphics.GraphicsDevice.SetRenderTarget(null);

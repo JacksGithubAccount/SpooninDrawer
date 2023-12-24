@@ -12,6 +12,7 @@
 
 /reference:..\..\Engine2DPipelineExtensions\bin\Release\netstandard2.0\Engine2DPipelineExtensions.dll
 /reference:..\..\XMLContent.Data\bin\Debug\net6.0\XMLContent.Data.dll
+/reference:..\..\..\..\..\.nuget\packages\monogame.extended.content.pipeline\3.9.0-alpha0107\tools\MonoGame.Extended.Content.Pipeline.dll
 
 #---------------------------------- Content ---------------------------------#
 
@@ -151,4 +152,9 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Sprites/Animations/PlayerSpriteSheet.png
+
+#begin TiledMaps/test.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:TiledMaps/test.tmx
 

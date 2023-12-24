@@ -21,8 +21,10 @@
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/sounds/empty.wav</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Sprites/Animations/PlayerSpriteSheet - Copy.png</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Sprites/Animations/PlayerSpriteSheet.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TiledMaps/test.tmx</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

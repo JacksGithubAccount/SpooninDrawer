@@ -82,6 +82,12 @@ namespace SpooninDrawer
          * -added more stuff to gameeditor, but lots of stuff not working. Says it's not in the Monogame framework? Will need to figure out
          * 11/21/23
          * -entered a possible fix to the graphics device not detected. need to test if it works.
+         * 12/19/23
+         * -forms isnt working, cant get it to work. installed tiled instead to try that. need to test it.
+         * 12/23/23
+         * -tiled doesn't work. latest version of extended(3.8.0) removed a reference that tiled uses to build it's map.
+         * -current solution is to install an alpha pre-release version of the newest update(3.8.1), which worked.
+         * -need to move camera from test state to actual state.
          */
     }
 }

@@ -26,7 +26,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/lithiumtoast/api/v3/index.json": {}
         },
         "frameworks": {
           "netstandard2.0": {
@@ -93,7 +94,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://www.myget.org/F/lithiumtoast/api/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -121,7 +123,15 @@
             },
             "MonoGame.Extended": {
               "target": "Package",
-              "version": "[3.8.0, )"
+              "version": "[3.9.0-alpha0107, )"
+            },
+            "MonoGame.Extended.Content.Pipeline": {
+              "target": "Package",
+              "version": "[3.9.0-alpha0107, )"
+            },
+            "MonoGame.Extended.Tiled": {
+              "target": "Package",
+              "version": "[3.9.0-alpha0107, )"
             },
             "MonoGame.Forms.DX": {
               "target": "Package",

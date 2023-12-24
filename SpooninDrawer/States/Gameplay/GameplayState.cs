@@ -18,6 +18,9 @@ using SpooninDrawer.Objects.Text;
 using SpooninDrawer.States.Gameplay;
 using System.Reflection.Metadata;
 
+using MonoGame.Extended.Tiled;
+using MonoGame.Extended.Tiled.Renderers;
+
 namespace SpooninDrawer.Engine.States.Gameplay
 {
     public class GameplayState : BaseGameState
@@ -27,6 +30,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
         private const string PlayerAnimationTurnLeft = "Animations/Player/left_walk";
         private const string PlayerAnimationTurnRight = "Animations/Player/right_walk";
         private const string PlayerAnimationIdle = "Animations/Player/idle";
+        private const string TiledMapTest = "TiledMaps/test";
         //rivate const string ExplosionTexture = "Sprites/explosion";
 
         private const string TextFont = "Fonts/Lives";
@@ -63,10 +67,16 @@ namespace SpooninDrawer.Engine.States.Gameplay
         private const string StatsFont = "Fonts/Stats";       
         private StatsObject _statsText;
 
+        TiledMap _tiledMap;
+        TiledMapRenderer _tiledMapRenderer;
+
         public override void LoadContent()
         {
             _debug = true;
             //_explosionTexture = LoadTexture(ExplosionTexture);
+
+            _tiledMap = LoadTiledMap(TiledMapTest);
+            _tiledMapRenderer = GetTiledMapRenderer(_tiledMap);
 
             var turnLeftAnimation = LoadAnimation(PlayerAnimationTurnLeft);
             var turnRightAnimation = LoadAnimation(PlayerAnimationTurnRight);
@@ -137,6 +147,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
 
         public override void UpdateGameState(GameTime gameTime)
         {
+            _tiledMapRenderer.Update(gameTime);
             _playerSprite.Update(gameTime);
 
             DetectCollisions();
@@ -159,6 +170,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
                 var viewportRectangle = new Rectangle(0, 0, _viewportWidth, _viewportHeight);
                 spriteBatch.Draw(screenBoxTexture, viewportRectangle, Color.Black * 0.3f);
             }
+            _tiledMapRenderer.Draw();
         }
 
         private Texture2D GetScreenBoxTexture(GraphicsDevice graphicsDevice)

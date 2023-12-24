@@ -1,5 +1,7 @@
 ﻿using SpooninDrawer.Content;
 using SpooninDrawer.Engine;
+using SpooninDrawer.Engine.States;
+using SpooninDrawer.Engine.States.Gameplay;
 using SpooninDrawer.States.Dev;
 using SpooninDrawer.States.Splash;
 using System;
@@ -21,7 +23,6 @@ namespace SpooninDrawer
         private const string FRENCH = "fr";
         private const string JAPANESE = "ja";
 
-
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -30,7 +31,7 @@ namespace SpooninDrawer
         {
             RStrings.Culture = CultureInfo.CurrentCulture;
             //RStrings.Culture = CultureInfo.GetCultureInfo(JAPANESE); //to switch language for RString resource
-            using (var game = new MainGame(WIDTH, HEIGHT, new TestCameraState()))
+            using (var game = new MainGame(WIDTH, HEIGHT, new GameplayState()))
                 game.Run();
         }
     }
