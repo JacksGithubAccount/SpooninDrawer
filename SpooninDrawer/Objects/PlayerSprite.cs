@@ -178,7 +178,6 @@ namespace SpooninDrawer.Objects
                     sourceRectangle = currentFrame.SourceRectangle;
                 }
             }
-
             spriteBatch.Draw(_texture, destinationRectangle, sourceRectangle, Color.White);
         }
     }

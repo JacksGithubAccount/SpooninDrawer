@@ -4,6 +4,8 @@ using SpooninDrawer.Engine.Input;
 using SpooninDrawer.Objects;
 using SpooninDrawer.Engine.Input.Base;
 using SpooninDrawer.Engine.States;
+using MonoGame.Extended.ViewportAdapters;
+using MonoGame.Extended;
 
 using System;
 using System.Collections.Generic;
@@ -25,6 +27,8 @@ namespace SpooninDrawer.Engine.States.Gameplay
 {
     public class GameplayState : BaseGameState
     {
+        private const float CAMERA_SPEED = 10.0f;
+
         private const string BackgroundTexture = "Sprites/Barren";
         private const string PlayerFighter = "Sprites/Animations/PlayerSpriteSheet";
         private const string PlayerAnimationTurnLeft = "Animations/Player/left_walk";
@@ -70,6 +74,8 @@ namespace SpooninDrawer.Engine.States.Gameplay
         TiledMap _tiledMap;
         TiledMapRenderer _tiledMapRenderer;
 
+        private OrthographicCamera _camera;
+
         public override void LoadContent()
         {
             _debug = true;
@@ -85,6 +91,9 @@ namespace SpooninDrawer.Engine.States.Gameplay
             // load sound effects and register in the sound manager
             //var bulletSound = LoadSound(BulletSound);
             //var missileSound = LoadSound(MissileSound);
+
+            var viewportAdapter = new DefaultViewportAdapter(_graphicsDevice);
+            _camera = new OrthographicCamera(viewportAdapter);
 
             _statsText = new StatsObject(LoadFont(StatsFont));
             _statsText.Position = new Vector2(10, 10);
@@ -149,6 +158,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
         {
             _tiledMapRenderer.Update(gameTime);
             _playerSprite.Update(gameTime);
+            _camera.Position = _playerSprite.Position - _camera.Origin;
 
             DetectCollisions();
 
@@ -158,11 +168,19 @@ namespace SpooninDrawer.Engine.States.Gameplay
             }
             // get rid of bullets and missiles that have gone out of view
         }
-
+        public Matrix getCameraViewMatrix()
+        {
+            var transformMatrix = _camera.GetViewMatrix();
+            return transformMatrix;
+        }
         public override void Render(SpriteBatch spriteBatch)
         {
             base.Render(spriteBatch);
-
+            var transformMatrix = getCameraViewMatrix();
+            //spriteBatch.End();
+            spriteBatch.Begin(transformMatrix: transformMatrix);
+            _playerSprite.Render(spriteBatch);
+            spriteBatch.End();
             if (_gameOver)
             {
                 // draw black rectangle at 30% transparency
@@ -240,24 +258,31 @@ namespace SpooninDrawer.Engine.States.Gameplay
 
         private void KeepPlayerInBounds()
         {
-            if (_playerSprite.Position.X < 0)
+            if (_playerSprite.Position.X < _camera.BoundingRectangle.Left)
             {
-                _playerSprite.Position = new Vector2(0, _playerSprite.Position.Y);
+                _playerSprite.Position = new Vector2(0, _playerSprite.
+               Position.Y);
             }
-
-            if (_playerSprite.Position.X > _viewportWidth - _playerSprite.Width)
+            if (_playerSprite.Position.X + _playerSprite.Width >
+            _camera.BoundingRectangle.Right)
             {
-                _playerSprite.Position = new Vector2(_viewportWidth - _playerSprite.Width, _playerSprite.Position.Y);
+                _playerSprite.Position = new Vector2(
+                _camera.BoundingRectangle.Right - _playerSprite.
+               Width,
+                _playerSprite.Position.Y);
             }
-
-            if (_playerSprite.Position.Y < 0)
+            if (_playerSprite.Position.Y < _camera.BoundingRectangle.Top)
             {
-                _playerSprite.Position = new Vector2(_playerSprite.Position.X, 0);
+                _playerSprite.Position = new Vector2(
+                _playerSprite.Position.X,
+                _camera.BoundingRectangle.Top);
             }
-
-            if (_playerSprite.Position.Y > _viewportHeight - _playerSprite.Height)
+            if (_playerSprite.Position.Y + _playerSprite.Height > _camera.BoundingRectangle.Bottom)
             {
-                _playerSprite.Position = new Vector2(_playerSprite.Position.X, _viewportHeight - _playerSprite.Height);
+                _playerSprite.Position = new Vector2(
+                _playerSprite.Position.X,
+                _camera.BoundingRectangle.Bottom - _playerSprite.
+               Height);
             }
         }
 

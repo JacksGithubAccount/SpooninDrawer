@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SpooninDrawer.Engine.States;
+using SpooninDrawer.Engine.States.Gameplay;
 using SpooninDrawer.Objects;
 using SpooninDrawer.States;
 using System;
@@ -172,7 +173,7 @@ namespace SpooninDrawer.Engine
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
-
+            
             _currentGameState.Render(spriteBatch);
 
             spriteBatch.End();
