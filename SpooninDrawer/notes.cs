@@ -87,9 +87,14 @@ namespace SpooninDrawer
          * 12/23/23
          * -tiled doesn't work. latest version of extended(3.8.0) removed a reference that tiled uses to build it's map.
          * -current solution is to install an alpha pre-release version of the newest update(3.8.1), which worked.
+         * -added test map through tiled
          * -need to move camera from test state to actual state.
          * 12/26/23
          * -there's an issue with spritebatch begins where you need the transformation matrixc of the camera to get it to work but the begins is called in a different class
+         * 12/27/23
+         * -added a method to retrieve the matrix and passed it to the main game, now the camera moves with the character
+         * -new issue now where the map also moves with the character
+         * -fixed, had to add the camera view matrix into the draw method for the tiled map
          */
     }
 }

@@ -171,8 +171,13 @@ namespace SpooninDrawer.Engine
             GraphicsDevice.SetRenderTarget(_renderTarget);
 
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            spriteBatch.Begin();
+            if(_currentGameState.GetType() == typeof(GameplayState))
+            {
+                GameplayState tempState = _currentGameState as GameplayState;
+                var transformMatrix = tempState.getCameraViewMatrix();
+                spriteBatch.Begin(transformMatrix: transformMatrix);
+            }else
+                spriteBatch.Begin();
             
             _currentGameState.Render(spriteBatch);
 

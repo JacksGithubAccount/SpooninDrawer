@@ -175,12 +175,13 @@ namespace SpooninDrawer.Engine.States.Gameplay
         }
         public override void Render(SpriteBatch spriteBatch)
         {
+            _tiledMapRenderer.Draw(_camera.GetViewMatrix());
             base.Render(spriteBatch);
             var transformMatrix = getCameraViewMatrix();
-            //spriteBatch.End();
-            spriteBatch.Begin(transformMatrix: transformMatrix);
+
+            //spriteBatch.Begin(transformMatrix: transformMatrix);
             _playerSprite.Render(spriteBatch);
-            spriteBatch.End();
+            //spriteBatch.End();
             if (_gameOver)
             {
                 // draw black rectangle at 30% transparency
@@ -188,7 +189,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
                 var viewportRectangle = new Rectangle(0, 0, _viewportWidth, _viewportHeight);
                 spriteBatch.Draw(screenBoxTexture, viewportRectangle, Color.Black * 0.3f);
             }
-            _tiledMapRenderer.Draw();
+           
         }
 
         private Texture2D GetScreenBoxTexture(GraphicsDevice graphicsDevice)
