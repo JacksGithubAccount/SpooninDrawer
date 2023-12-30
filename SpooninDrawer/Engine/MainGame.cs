@@ -155,7 +155,7 @@ namespace SpooninDrawer.Engine
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            _currentGameState.HandleInput(gameTime);
+            //_currentGameState.HandleInput(gameTime);
             _currentGameState.Update(gameTime);
 
             base.Update(gameTime);
@@ -170,7 +170,11 @@ namespace SpooninDrawer.Engine
             // Render to the Render Target
             GraphicsDevice.SetRenderTarget(_renderTarget);
 
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            //this makes transparency work on tiled maps
+            GraphicsDevice.BlendState = BlendState.AlphaBlend;
+            //GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            //attaches camera to player
             if(_currentGameState.GetType() == typeof(GameplayState))
             {
                 GameplayState tempState = _currentGameState as GameplayState;

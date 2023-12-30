@@ -7,47 +7,71 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SpooninDrawer.States.Dev;
+using SpooninDrawer.Engine.States.Gameplay;
+using SharpDX.XInput;
 
 namespace SpooninDrawer.States.Gameplay
 {
     public class GameplayInputMapper : BaseInputMapper
     {
-        public override IEnumerable<BaseInputCommand> GetKeyboardState(KeyboardState state)
+        KeyboardState currentKeyboardState;
+        KeyboardState previousKeyboardState;
+
+
+        public override IEnumerable<BaseInputCommand> GetKeyboardState(KeyboardState keyState)
         {
+            previousKeyboardState = currentKeyboardState;
+            currentKeyboardState = keyState;
+
             var commands = new List<GameplayInputCommand>();
 
-            if (state.IsKeyDown(Keys.Escape))
+            if (keyState.IsKeyDown(Keys.Escape))
             {
                 commands.Add(new GameplayInputCommand.GameExit());
             }
 
-            if (state.IsKeyDown(Keys.Space))
+            if (keyState.IsKeyDown(Keys.Space))
             {
                 commands.Add(new GameplayInputCommand.PlayerAction());
             }
 
-            if (state.IsKeyDown(Keys.Right))
+            if (keyState.IsKeyDown(Keys.Right))
             {
                 commands.Add(new GameplayInputCommand.PlayerMoveRight());
             }
-            else if (state.IsKeyDown(Keys.Left))
+            else if (keyState.IsKeyDown(Keys.Left))
             {
                 commands.Add(new GameplayInputCommand.PlayerMoveLeft());
             }
-            if (state.IsKeyDown(Keys.Up))
+            if (keyState.IsKeyDown(Keys.Up))
             {
                 commands.Add(new GameplayInputCommand.PlayerMoveUp());
             }
-            else if (state.IsKeyDown(Keys.Down))
+            else if (keyState.IsKeyDown(Keys.Down))
             {
                 commands.Add(new GameplayInputCommand.PlayerMoveDown());
             }
-            if (state.IsKeyUp(Keys.Right) && state.IsKeyUp(Keys.Left) && state.IsKeyUp(Keys.Up) && state.IsKeyUp(Keys.Down))
+            if (keyState.IsKeyUp(Keys.Right) && keyState.IsKeyUp(Keys.Left) && keyState.IsKeyUp(Keys.Up) && keyState.IsKeyUp(Keys.Down))
             {
                 commands.Add(new GameplayInputCommand.PlayerStopsMoving());
             }
-
+            if (keyState.IsKeyDown(Keys.P) && IsKeyReleased(Keys.P))
+            {
+                commands.Add(new GameplayInputCommand.Pause());
+            }
             return commands;
+        }
+        private bool isKeyHold(Keys key)
+        {
+            return currentKeyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyDown(key);
+        }
+        private bool IsKeyPressedOnce(Keys key)
+        {
+            return currentKeyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyUp(key);
+        }
+        private bool IsKeyReleased(Keys key)
+        {
+            return currentKeyboardState.IsKeyUp(key) && previousKeyboardState.IsKeyDown(key);
         }
     }
 }

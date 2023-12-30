@@ -16,5 +16,11 @@ namespace SpooninDrawer.States.Gameplay
         public class PlayerMoveDown : GameplayInputCommand { }
         public class PlayerStopsMoving : GameplayInputCommand { }
         public class PlayerAction : GameplayInputCommand { }
+        public class PlayerConfirm : GameplayInputCommand { }
+        public class PlayerCancel : GameplayInputCommand { }
+        public class PlayerInteract : GameplayInputCommand { }
+        public class PlayerOpenMenu : GameplayInputCommand { }
+        public class PlayerNoInput : GameplayInputCommand { }
+        public class Pause : GameplayInputCommand { }
     }
 }

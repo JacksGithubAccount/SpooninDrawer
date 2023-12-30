@@ -95,6 +95,13 @@ namespace SpooninDrawer
          * -added a method to retrieve the matrix and passed it to the main game, now the camera moves with the character
          * -new issue now where the map also moves with the character
          * -fixed, had to add the camera view matrix into the draw method for the tiled map
+         * 12/29/23
+         * -tiled map transparency isn't working. they render as black isntead
+         * -adding GraphicsDevice.BlendState = BlendState.AlphaBlend; to the draw method made it work
+         * -added pause, it works, but input doesn't work correctly. may need to remove current input control to add one that works better
+         * -added a version of input control, needs further work. Turns out I already created a version of this in splash state, imported over to gameplay state
+         * -release input doesn't work, will need to lookfurther into it
+         * 
          */
     }
 }

@@ -60,6 +60,8 @@ namespace SpooninDrawer.Engine.States.Gameplay
         private Texture2D _screenBoxTexture;
 
         private PlayerSprite _playerSprite;
+
+        private bool paused = false;
         private bool _playerDead;
         private bool _gameOver = false;
         
@@ -108,7 +110,18 @@ namespace SpooninDrawer.Engine.States.Gameplay
 
             ResetGame();
         }
-
+        //it's handleinput method but specifically for pause so this doesn't pause when you pause the game
+        private void HandlePauseInput()
+        {
+            InputManager.GetCommands(cmd =>
+            {
+                if (cmd is GameplayInputCommand.Pause)
+                {
+                    //paused ^= true;
+                    paused = !paused;
+                }
+            });
+        }
         public override void HandleInput(GameTime gameTime)
         {
             InputManager.GetCommands(cmd =>
@@ -150,22 +163,29 @@ namespace SpooninDrawer.Engine.States.Gameplay
                 if (cmd is GameplayInputCommand.PlayerAction && !_playerDead)
                 {
                     //mc action
-                }
+                }                
             });
         }
 
         public override void UpdateGameState(GameTime gameTime)
         {
-            _tiledMapRenderer.Update(gameTime);
-            _playerSprite.Update(gameTime);
-            _camera.Position = _playerSprite.Position - _camera.Origin;
+            HandlePauseInput();
+            if (!paused)
+            {
+                HandleInput(gameTime);
+                _tiledMapRenderer.Update(gameTime);
+                _playerSprite.Update(gameTime);
+                _camera.Position = _playerSprite.Position - _camera.Origin;
 
-            DetectCollisions();
-
+                DetectCollisions();
+            }
             if (_debug)
             {
                 _statsText.Update(gameTime);
             }
+
+            //part of code that allows use of hold, press, release input for keys on keyboard
+            //InputManager.setOldKeyboardState(Keyboard.GetState());
             // get rid of bullets and missiles that have gone out of view
         }
         public Matrix getCameraViewMatrix()
@@ -174,8 +194,9 @@ namespace SpooninDrawer.Engine.States.Gameplay
             return transformMatrix;
         }
         public override void Render(SpriteBatch spriteBatch)
-        {
+        {            
             _tiledMapRenderer.Draw(_camera.GetViewMatrix());
+
             base.Render(spriteBatch);
             var transformMatrix = getCameraViewMatrix();
 
