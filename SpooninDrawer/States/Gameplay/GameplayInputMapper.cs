@@ -55,7 +55,7 @@ namespace SpooninDrawer.States.Gameplay
             {
                 commands.Add(new GameplayInputCommand.PlayerStopsMoving());
             }
-            if (keyState.IsKeyDown(Keys.P) && IsKeyReleased(Keys.P))
+            if (keyState.IsKeyDown(Keys.P) && IsKeyPressedOnce(Keys.P))
             {
                 commands.Add(new GameplayInputCommand.Pause());
             }

@@ -16,10 +16,10 @@ namespace SpooninDrawer.Engine.Input.Base
             _inputMapper = inputMapper;
             oldKeyboardState = Keyboard.GetState();
         }
-        //public void setOldKeyboardState(KeyboardState keyboardState) 
-        //{
-        //    oldKeyboardState = keyboardState;
-        //}
+        public void setOldKeyboardState(KeyboardState keyboardState) 
+        {
+            oldKeyboardState = keyboardState;
+        }
         public void GetCommands(Action<BaseInputCommand> actOnState)
         {
             var keyboardState = Keyboard.GetState();
