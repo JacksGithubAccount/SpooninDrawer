@@ -1,4 +1,4 @@
-﻿using SpooninDrawer.Engine.Input.Base;
+﻿using SpooninDrawer.Engine.Input;
 using SpooninDrawer.Engine.Objects;
 using SpooninDrawer.States.Splash;
 using System;

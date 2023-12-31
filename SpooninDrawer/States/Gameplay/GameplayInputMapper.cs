@@ -1,5 +1,4 @@
 ﻿using Microsoft.Xna.Framework.Input;
-using SpooninDrawer.Engine.Input.Base;
 using SpooninDrawer.Engine.Input;
 using System;
 using System.Collections.Generic;
@@ -16,8 +15,12 @@ namespace SpooninDrawer.States.Gameplay
     {
         KeyboardState currentKeyboardState;
         KeyboardState previousKeyboardState;
+        InputManager inputManager;
 
-
+        public void SetInputManager(InputManager inputManager)
+        {
+            this.inputManager = inputManager;
+        }
         public override IEnumerable<BaseInputCommand> GetKeyboardState(KeyboardState keyState)
         {
             previousKeyboardState = currentKeyboardState;
@@ -35,7 +38,7 @@ namespace SpooninDrawer.States.Gameplay
                 commands.Add(new GameplayInputCommand.PlayerAction());
             }
 
-            if (keyState.IsKeyDown(Keys.Right))
+            if (inputManager.IsActionPressed(new GameplayInputCommand.PlayerMoveRight()))
             {
                 commands.Add(new GameplayInputCommand.PlayerMoveRight());
             }

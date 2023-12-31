@@ -1,4 +1,4 @@
-﻿using SpooninDrawer.Engine.Input.Base;
+﻿using SpooninDrawer.Engine.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SpooninDrawer.Engine.Input.Base
+namespace SpooninDrawer.Engine.Input
 {
     public class BaseInputMapper
     {

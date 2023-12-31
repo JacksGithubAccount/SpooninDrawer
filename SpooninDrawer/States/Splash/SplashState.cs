@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using SpooninDrawer.Engine.Input;
 using SpooninDrawer.Engine.States;
 using Microsoft.Xna.Framework;
-using SpooninDrawer.Engine.Input.Base;
 using SpooninDrawer.Engine.States.Gameplay;
 using SpooninDrawer.Engine.Objects;
 using SpooninDrawer.Objects.Screens;

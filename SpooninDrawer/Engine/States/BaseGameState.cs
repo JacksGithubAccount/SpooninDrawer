@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.Xna.Framework;
 using SpooninDrawer.Engine.States;
 using SpooninDrawer.Engine.Objects;
-using SpooninDrawer.Engine.Input.Base;
+using SpooninDrawer.Engine.Input;
 using Microsoft.Xna.Framework.Audio;
 using SpooninDrawer.Engine.Sound;
 using SpooninDrawer.Objects.Screens;

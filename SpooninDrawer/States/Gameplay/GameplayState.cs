@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Input;
 using SpooninDrawer.Engine.Input;
 using SpooninDrawer.Objects;
-using SpooninDrawer.Engine.Input.Base;
 using SpooninDrawer.Engine.States;
 using MonoGame.Extended.ViewportAdapters;
 using MonoGame.Extended;
@@ -186,7 +185,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
             }
 
             //part of code that allows use of hold, press, release input for keys on keyboard
-            InputManager.setOldKeyboardState(Keyboard.GetState());
+            InputManager.SetOldKeyboardState(Keyboard.GetState());
             // get rid of bullets and missiles that have gone out of view
         }
         public Matrix getCameraViewMatrix()
@@ -312,6 +311,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
         protected override void SetInputManager()
         {
             InputManager = new InputManager(new GameplayInputMapper());
+
         }
     }
 }

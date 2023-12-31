@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using SpooninDrawer.Engine.States;
 using Microsoft.Xna.Framework;
 using SpooninDrawer.States.Gameplay;
-using SpooninDrawer.Engine.Input.Base;
+using SpooninDrawer.Engine.Input;
 
 namespace SpooninDrawer.States.Dev
 {

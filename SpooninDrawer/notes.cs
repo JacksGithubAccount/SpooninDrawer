@@ -102,7 +102,8 @@ namespace SpooninDrawer
          * -added a version of input control, needs further work. Turns out I already created a version of this in splash state, imported over to gameplay state
          * -release input doesn't work, will need to lookfurther into it, also add more that'll let you change keys ingame
          * -found out why release wasn't working. I was leaving in the part of the code where it was checking if key was pressed. Release works now
-         * 
+         * 12/30/23
+         * -appemted to intgrate control change from prevous project. don't think it's working. may have to inport it instead
          */
     }
 }

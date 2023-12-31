@@ -2,7 +2,6 @@
 using Microsoft.Xna.Framework.Input;
 using SpooninDrawer.Engine.Input;
 using SpooninDrawer.Objects;
-using SpooninDrawer.Engine.Input.Base;
 using SpooninDrawer.Engine.States;
 
 using System;
@@ -251,7 +250,7 @@ namespace SpooninDrawer.States.Dev
 
         protected override void SetInputManager()
         {
-            InputManager = new InputManager(new GameplayInputMapper());
+            InputManager = new InputManager(new GameplayInputMapper(InputManager));
         }
     }
 }

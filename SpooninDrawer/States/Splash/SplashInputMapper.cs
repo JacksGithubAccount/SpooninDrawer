@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SpooninDrawer.Engine.Input.Base;
 using static SpooninDrawer.States.Splash.SplashInputCommand;
 
 namespace SpooninDrawer.States.Splash
