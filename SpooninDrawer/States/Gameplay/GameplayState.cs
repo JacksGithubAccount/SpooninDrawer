@@ -26,6 +26,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
 {
     public class GameplayState : BaseGameState
     {
+        //InputDetector inputDetector;
         private const float CAMERA_SPEED = 10.0f;
 
         private const string BackgroundTexture = "Sprites/Barren";
@@ -80,6 +81,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
         public override void LoadContent()
         {
             _debug = true;
+            //inputDetector = new InputDetector();
             //_explosionTexture = LoadTexture(ExplosionTexture);
 
             _tiledMap = LoadTiledMap(TiledMapTest);
@@ -185,7 +187,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
             }
 
             //part of code that allows use of hold, press, release input for keys on keyboard
-            InputManager.SetOldKeyboardState(Keyboard.GetState());
+            //inputDetector.update(Keyboard.GetState());
             // get rid of bullets and missiles that have gone out of view
         }
         public Matrix getCameraViewMatrix()

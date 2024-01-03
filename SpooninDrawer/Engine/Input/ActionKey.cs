@@ -10,41 +10,41 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace SpooninDrawer.Engine.Input
 {
-     class CommandKey
+    class ActionKey
     {
         public Keys key;
-        public BaseInputCommand command;
+        public Actions action;
         public InputType type;
 
-        public CommandKey(Keys inputKey, BaseInputCommand command)
+        public ActionKey(Keys inputKey, Actions keyAction)
         {
             key = inputKey;
-            this.command = command;
+            action = keyAction;
         }
-        public CommandKey(CommandKey commandKey)
+        public ActionKey(ActionKey actionKey)
         {
-            key = commandKey.key;
-            command = commandKey.command;
+            key = actionKey.key;
+            action = actionKey.action;
             type = InputType.NoInput;
         }
-        public CommandKey(CommandKey commandKey, InputType inputType)
+        public ActionKey(ActionKey actionKey, InputType inputType)
         {
-            key = commandKey.key;
-            command = commandKey.command;
+            key = actionKey.key;
+            action = actionKey.action;
             type = inputType;
         }
-        public CommandKey(Keys inputKey, BaseInputCommand command, InputType inputType)
+        public ActionKey(Keys inputKey, Actions keyAction, InputType inputType)
         {
             key = inputKey;
-            this.command = command;
+            action = keyAction;
             type = inputType;
         }
-        public void SetKeyAction(Keys inputKey, BaseInputCommand command)
+        public void setKeyAction(Keys inputKey, Actions keyAction)
         {
             key = inputKey;
-            this.command = command;
+            action = keyAction;
         }
-        public void SetKey(Keys inputKey)
+        public void setKey(Keys inputKey)
         {
             key = inputKey;
         }

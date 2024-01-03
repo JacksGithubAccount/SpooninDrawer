@@ -15,15 +15,23 @@ namespace SpooninDrawer.States.Gameplay
     {
         KeyboardState currentKeyboardState;
         KeyboardState previousKeyboardState;
-        InputManager inputManager;
-
-        public void SetInputManager(InputManager inputManager)
+        InputDetector inputDetector;
+        public GameplayInputMapper()
         {
-            this.inputManager = inputManager;
+            inputDetector = new InputDetector();
+        }
+        public GameplayInputMapper(InputDetector inputDetector)
+        {
+            this.inputDetector = inputDetector;
+        }
+        public void SetInputDetector(InputDetector inputDetector)
+        {
+            this.inputDetector = inputDetector;
         }
         public override IEnumerable<BaseInputCommand> GetKeyboardState(KeyboardState keyState)
         {
             previousKeyboardState = currentKeyboardState;
+            inputDetector.update(previousKeyboardState);
             currentKeyboardState = keyState;
 
             var commands = new List<GameplayInputCommand>();
@@ -33,48 +41,36 @@ namespace SpooninDrawer.States.Gameplay
                 commands.Add(new GameplayInputCommand.GameExit());
             }
 
-            if (keyState.IsKeyDown(Keys.Space))
+            if (inputDetector.IsActioninputtedbyType(Actions.Confirm, InputType.Press))
             {
                 commands.Add(new GameplayInputCommand.PlayerAction());
             }
 
-            if (inputManager.IsActionPressed(new GameplayInputCommand.PlayerMoveRight()))
+            if (inputDetector.IsActionPressed(Actions.MoveRight))
             {
                 commands.Add(new GameplayInputCommand.PlayerMoveRight());
             }
-            else if (keyState.IsKeyDown(Keys.Left))
+            else if (inputDetector.IsActionPressed(Actions.MoveLeft))
             {
                 commands.Add(new GameplayInputCommand.PlayerMoveLeft());
             }
-            if (keyState.IsKeyDown(Keys.Up))
+            if (inputDetector.IsActionPressed(Actions.MoveUp))
             {
                 commands.Add(new GameplayInputCommand.PlayerMoveUp());
             }
-            else if (keyState.IsKeyDown(Keys.Down))
+            else if (inputDetector.IsActionPressed(Actions.MoveDown))
             {
                 commands.Add(new GameplayInputCommand.PlayerMoveDown());
             }
-            if (keyState.IsKeyUp(Keys.Right) && keyState.IsKeyUp(Keys.Left) && keyState.IsKeyUp(Keys.Up) && keyState.IsKeyUp(Keys.Down))
+            if (!inputDetector.IsActionPressed(Actions.MoveRight) && !inputDetector.IsActionPressed(Actions.MoveLeft) && !inputDetector.IsActionPressed(Actions.MoveUp) && !inputDetector.IsActionPressed(Actions.MoveDown))
             {
                 commands.Add(new GameplayInputCommand.PlayerStopsMoving());
             }
-            if (keyState.IsKeyDown(Keys.P) && IsKeyPressedOnce(Keys.P))
+            if (inputDetector.IsActioninputtedbyType(Actions.Pause, InputType.Press))
             {
                 commands.Add(new GameplayInputCommand.Pause());
             }
             return commands;
-        }
-        private bool isKeyHold(Keys key)
-        {
-            return currentKeyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyDown(key);
-        }
-        private bool IsKeyPressedOnce(Keys key)
-        {
-            return currentKeyboardState.IsKeyDown(key) && previousKeyboardState.IsKeyUp(key);
-        }
-        private bool IsKeyReleased(Keys key)
-        {
-            return currentKeyboardState.IsKeyUp(key) && previousKeyboardState.IsKeyDown(key);
         }
     }
 }

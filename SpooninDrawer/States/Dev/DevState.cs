@@ -250,7 +250,7 @@ namespace SpooninDrawer.States.Dev
 
         protected override void SetInputManager()
         {
-            InputManager = new InputManager(new GameplayInputMapper(InputManager));
+            InputManager = new InputManager(new GameplayInputMapper());
         }
     }
 }
