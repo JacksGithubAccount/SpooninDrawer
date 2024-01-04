@@ -16,14 +16,16 @@
         },
         "test.tmx": {
             "scale": 0.7012847222222223,
-            "selectedLayer": 2,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 467.00004951230375,
-                "y": 453.45348319057274
+                "x": 727.9496954993316,
+                "y": 489.10234193197005
             }
         }
     },
+    "last.exportedFilePath": "C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TiledMaps",
     "last.imagePath": "C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TileSets",
+    "map.lastUsedExportFilter": "JSON map files (*.tmj *.json)",
     "map.lastUsedFormat": "tmx",
     "map.tileHeight": 48,
     "map.tileWidth": 48,
@@ -32,6 +34,7 @@
         "C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TileSets/incrediblybadmspainttileset.tsx"
     ],
     "project": "test.tiled-project",
+    "property.type": "bool",
     "recentFiles": [
         "C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TileSets/incrediblybadmspainttileset.tsx",
         "test.tmx"

@@ -106,6 +106,8 @@ namespace SpooninDrawer
          * -appemted to intgrate control change from prevous project. don't think it's working. may have to inport it instead
          * 1/2/24
          * -had to remove changes and ended up importing the inputter and action key from old project and it works
+         * 1/3/24
+         * -next step is adding collision to map, researching on tiled at the moment
          */
     }
 }
