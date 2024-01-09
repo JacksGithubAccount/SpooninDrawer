@@ -108,6 +108,8 @@ namespace SpooninDrawer
          * -had to remove changes and ended up importing the inputter and action key from old project and it works
          * 1/3/24
          * -next step is adding collision to map, researching on tiled at the moment
+         * 1/8/24
+         * -installed TiledCs and TiledSharp, one or the other is needed to make coding for Tiled maps easier
          */
     }
 }

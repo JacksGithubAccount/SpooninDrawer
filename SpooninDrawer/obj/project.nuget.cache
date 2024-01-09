@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9dF9KJLjXmGbBKraL3XUtasAmXp+6vY/raiyTXtW4n3qprLXzni9fSIPYczEj6bYd2txEtBJhYnjTRpwyhtAbA==",
+  "dgSpecHash": "wfHwaVlQj9qt7iQNguiUdHI3O1iiyQry7TV/R7J+lsUnVqqIZtVYySdmAay/gg5+nJBIpnLC3eA4dE+tq20o9Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\jckzh\\source\\repos\\SpooninDrawer\\SpooninDrawer\\SpooninDrawer.csproj",
   "expectedPackageFiles": [
@@ -132,7 +132,9 @@
     "C:\\Users\\jckzh\\.nuget\\packages\\system.xml.xdocument\\4.0.11\\system.xml.xdocument.4.0.11.nupkg.sha512",
     "C:\\Users\\jckzh\\.nuget\\packages\\system.xml.xmldocument\\4.0.1\\system.xml.xmldocument.4.0.1.nupkg.sha512",
     "C:\\Users\\jckzh\\.nuget\\packages\\system.xml.xpath\\4.0.1\\system.xml.xpath.4.0.1.nupkg.sha512",
-    "C:\\Users\\jckzh\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512"
+    "C:\\Users\\jckzh\\.nuget\\packages\\system.xml.xpath.xdocument\\4.0.1\\system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
+    "C:\\Users\\jckzh\\.nuget\\packages\\tiledcs\\3.3.3\\tiledcs.3.3.3.nupkg.sha512",
+    "C:\\Users\\jckzh\\.nuget\\packages\\tiledsharp\\1.0.1\\tiledsharp.1.0.1.nupkg.sha512"
   ],
   "logs": [
     {

@@ -21,6 +21,8 @@ using System.Reflection.Metadata;
 
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
+using TiledSharp;
+
 
 namespace SpooninDrawer.Engine.States.Gameplay
 {
@@ -72,8 +74,12 @@ namespace SpooninDrawer.Engine.States.Gameplay
         private const string StatsFont = "Fonts/Stats";       
         private StatsObject _statsText;
 
+        TmxMap _map;
         TiledMap _tiledMap;
+        TiledMapTile _tiledMapTile;
         TiledMapRenderer _tiledMapRenderer;
+        TiledMapLayer _tiledMapLayer;
+        private List<Rectangle> colliders;
 
         private OrthographicCamera _camera;
 
@@ -81,9 +87,13 @@ namespace SpooninDrawer.Engine.States.Gameplay
         {
             _debug = true;
             //_explosionTexture = LoadTexture(ExplosionTexture);
-
             _tiledMap = LoadTiledMap(TiledMapTest);
             _tiledMapRenderer = GetTiledMapRenderer(_tiledMap);
+            colliders = new List<Rectangle>();
+            //foreach (var o in _tiledMap.ObjectLayers["Collisions"].Objects)
+            //{
+            //    colliders.Add(new Rectangle(((int)o.X,(int)o.Y)));
+            //}
 
             var turnLeftAnimation = LoadAnimation(PlayerAnimationTurnLeft);
             var turnRightAnimation = LoadAnimation(PlayerAnimationTurnRight);
