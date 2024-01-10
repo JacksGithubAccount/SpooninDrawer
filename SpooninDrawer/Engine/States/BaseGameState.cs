@@ -46,7 +46,7 @@ namespace SpooninDrawer.Engine.States
             SetInputManager();
         }
 
-        public abstract void LoadContent();
+        public abstract void LoadContent(ContentManager content);
         public abstract void HandleInput(GameTime gameTime);
         public abstract void UpdateGameState(GameTime gameTime);
 

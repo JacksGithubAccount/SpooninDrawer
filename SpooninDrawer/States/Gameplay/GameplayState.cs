@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Content;
 using SpooninDrawer.Engine.Input;
 using SpooninDrawer.Objects;
 using SpooninDrawer.Engine.States;
@@ -22,6 +22,7 @@ using System.Reflection.Metadata;
 using MonoGame.Extended.Tiled;
 using MonoGame.Extended.Tiled.Renderers;
 using TiledSharp;
+using SpooninDrawer.Engine.Map;
 
 
 namespace SpooninDrawer.Engine.States.Gameplay
@@ -36,6 +37,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
         private const string PlayerAnimationTurnRight = "Animations/Player/right_walk";
         private const string PlayerAnimationIdle = "Animations/Player/idle";
         private const string TiledMapTest = "TiledMaps/test";
+        private const string TilesetTest = "TileSets/incrediblybadmspainttileset";
         //rivate const string ExplosionTexture = "Sprites/explosion";
 
         private const string TextFont = "Fonts/Lives";
@@ -75,22 +77,32 @@ namespace SpooninDrawer.Engine.States.Gameplay
         private StatsObject _statsText;
 
         TmxMap _map;
+        Texture2D _tileSet;
         TiledMap _tiledMap;
         TiledMapTile _tiledMapTile;
         TiledMapRenderer _tiledMapRenderer;
         TiledMapLayer _tiledMapLayer;
         private List<Rectangle> colliders;
+        private TilemapManager _tilemapManager;
 
         private OrthographicCamera _camera;
 
-        public override void LoadContent()
+        public override void LoadContent(ContentManager content)
         {
             _debug = true;
             //_explosionTexture = LoadTexture(ExplosionTexture);
+
+            _map = new TmxMap(TiledMapTest);
+            _tileSet = content.Load<Texture2D>(TilesetTest + _map.Tilesets[0].Name.ToString());
+            int tileWidth = _tileSet.Width;
+            int tileHeight = _tileSet.Height;
+            int tileSetTilesWide = _tileSet.Width / tileWidth;
+            _tilemapManager = new TilemapManager(new SpriteBatch(_graphicsDevice), _map, _tileSet, tileSetTilesWide,tileWidth, tileHeight);
             _tiledMap = LoadTiledMap(TiledMapTest);
             _tiledMapRenderer = GetTiledMapRenderer(_tiledMap);
+            _tiledMapLayer = _tiledMap.GetLayer("Collisions");
             colliders = new List<Rectangle>();
-            //foreach (var o in _tiledMap.ObjectLayers["Collisions"].Objects)
+            //foreach (var o in _tiledMap.ObjectLayers("Collisions").Objects)
             //{
             //    colliders.Add(new Rectangle(((int)o.X,(int)o.Y)));
             //}

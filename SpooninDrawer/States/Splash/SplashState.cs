@@ -14,6 +14,7 @@ using SpooninDrawer.Engine.Objects;
 using SpooninDrawer.Objects.Screens;
 using SpooninDrawer.Objects.Text;
 using SpooninDrawer.States.Dev;
+using Microsoft.Xna.Framework.Content;
 
 namespace SpooninDrawer.States.Splash
 {
@@ -36,7 +37,7 @@ namespace SpooninDrawer.States.Splash
         private const string TestFont = "Fonts/TestText";
         TestText _testText;
 
-        public override void LoadContent()
+        public override void LoadContent(ContentManager content)
         {
             _testText = new TestText(LoadFont(TestFont));
             _testText.Position = new Vector2(10.0f, 10.0f); 

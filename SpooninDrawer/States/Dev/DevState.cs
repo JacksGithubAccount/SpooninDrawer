@@ -16,6 +16,7 @@ using SpooninDrawer.Engine.Objects;
 using SpooninDrawer.Objects.Text;
 using SpooninDrawer.States.Gameplay;
 using System.Reflection.Metadata;
+using Microsoft.Xna.Framework.Content;
 
 namespace SpooninDrawer.States.Dev
 {
@@ -62,7 +63,7 @@ namespace SpooninDrawer.States.Dev
         private const string StatsFont = "Fonts/Stats";
         private StatsObject _statsText;
 
-        public override void LoadContent()
+        public override void LoadContent(ContentManager content)
         {
             _debug = true;
             //_explosionTexture = LoadTexture(ExplosionTexture);

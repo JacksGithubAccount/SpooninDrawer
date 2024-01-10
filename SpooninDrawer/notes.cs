@@ -110,6 +110,8 @@ namespace SpooninDrawer
          * -next step is adding collision to map, researching on tiled at the moment
          * 1/8/24
          * -installed TiledCs and TiledSharp, one or the other is needed to make coding for Tiled maps easier
+         * 1/9/2024
+         * -more work trying to get TiledSharp to display tiled map
          */
     }
 }

@@ -11,6 +11,7 @@ using SpooninDrawer.Engine.States;
 using Microsoft.Xna.Framework;
 using SpooninDrawer.States.Gameplay;
 using SpooninDrawer.Engine.Input;
+using Microsoft.Xna.Framework.Content;
 
 namespace SpooninDrawer.States.Dev
 {
@@ -24,7 +25,7 @@ namespace SpooninDrawer.States.Dev
         private const string PlayerAnimationIdle = "Animations/Player/idle";
         private PlayerSprite _playerSprite;
         private OrthographicCamera _camera;
-        public override void LoadContent()
+        public override void LoadContent(ContentManager content)
         {
             var viewportAdapter = new DefaultViewportAdapter(_graphicsDevice);
             _camera = new OrthographicCamera(viewportAdapter);

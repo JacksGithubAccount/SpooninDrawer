@@ -123,7 +123,7 @@ namespace SpooninDrawer.Engine
 
             _currentGameState.Initialize(Content, Window, GraphicsDevice);
 
-            _currentGameState.LoadContent();
+            _currentGameState.LoadContent(Content);
 
             _currentGameState.OnStateSwitched += CurrentGameState_OnStateSwitched;
             _currentGameState.OnEventNotification += _currentGameState_OnEventNotification;
