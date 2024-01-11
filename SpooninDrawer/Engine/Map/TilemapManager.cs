@@ -11,16 +11,14 @@ namespace SpooninDrawer.Engine.Map
 {
     public class TilemapManager
     {
-        private SpriteBatch _spriteBatch;
         TmxMap _map;
         Texture2D tileset;
         int tilesetTilesWide;
         int tileWidth;
         int tileHeight;
 
-        public TilemapManager(SpriteBatch spriteBatch, TmxMap map, Texture2D tileset, int tilesetTilesWide, int tileWidth, int tileHeight)
+        public TilemapManager( TmxMap map, Texture2D tileset, int tilesetTilesWide, int tileWidth, int tileHeight)
         {
-            _spriteBatch = spriteBatch;
             _map = map;
             this.tileset = tileset;
             this.tilesetTilesWide = tilesetTilesWide;
@@ -28,8 +26,8 @@ namespace SpooninDrawer.Engine.Map
             this.tileHeight = tileHeight;
         }
 
-        public void Draw() { 
-            _spriteBatch.Begin();
+        public void Draw(SpriteBatch _spriteBatch) { 
+            //_spriteBatch.Begin();
             for(int i = 0; i < _map.Layers.Count; i++) 
             { 
                 for(int j =0;  j < _map.Layers[i].Tiles.Count; j++)
@@ -51,7 +49,7 @@ namespace SpooninDrawer.Engine.Map
                     }
                 }
             }
-            _spriteBatch.End();
+            //_spriteBatch.End();
         }
     }
 }

@@ -92,20 +92,20 @@ namespace SpooninDrawer.Engine.States.Gameplay
             _debug = true;
             //_explosionTexture = LoadTexture(ExplosionTexture);
 
-            _map = new TmxMap(TiledMapTest);
-            _tileSet = content.Load<Texture2D>(TilesetTest + _map.Tilesets[0].Name.ToString());
-            int tileWidth = _tileSet.Width;
-            int tileHeight = _tileSet.Height;
+            _map = new TmxMap("Content/TiledMaps/test.tmx");
+            _tileSet = content.Load<Texture2D>(TilesetTest + "_1"); // TilesetTest + "_1" + _map.Tilesets[0].Name.ToString() "Content/TileSets/incrediblybadmspainttileset.png"
+            int tileWidth = _map.Tilesets[0].TileWidth;
+            int tileHeight = _map.Tilesets[0].TileHeight;
             int tileSetTilesWide = _tileSet.Width / tileWidth;
-            _tilemapManager = new TilemapManager(new SpriteBatch(_graphicsDevice), _map, _tileSet, tileSetTilesWide,tileWidth, tileHeight);
+            _tilemapManager = new TilemapManager(_map, _tileSet, tileSetTilesWide,tileWidth, tileHeight);
             _tiledMap = LoadTiledMap(TiledMapTest);
             _tiledMapRenderer = GetTiledMapRenderer(_tiledMap);
             _tiledMapLayer = _tiledMap.GetLayer("Collisions");
             colliders = new List<Rectangle>();
-            //foreach (var o in _tiledMap.ObjectLayers("Collisions").Objects)
-            //{
-            //    colliders.Add(new Rectangle(((int)o.X,(int)o.Y)));
-            //}
+            foreach (var o in _map.ObjectGroups["Collisions"].Objects)
+            {
+                colliders.Add(new Rectangle((int)o.X,(int)o.Y,(int)o.Width, (int)o.Height));
+            }
 
             var turnLeftAnimation = LoadAnimation(PlayerAnimationTurnLeft);
             var turnRightAnimation = LoadAnimation(PlayerAnimationTurnRight);
@@ -213,9 +213,9 @@ namespace SpooninDrawer.Engine.States.Gameplay
             return transformMatrix;
         }
         public override void Render(SpriteBatch spriteBatch)
-        {            
-            _tiledMapRenderer.Draw(_camera.GetViewMatrix());
-
+        {
+            //_tiledMapRenderer.Draw(_camera.GetViewMatrix());
+            _tilemapManager.Draw(spriteBatch);
             base.Render(spriteBatch);
             var transformMatrix = getCameraViewMatrix();
 

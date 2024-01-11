@@ -64,6 +64,7 @@ namespace SpooninDrawer.Objects
 
             //CurrentUpSpeed = _playerNormalUpSpeed;
         }
+        //moved to content file
         /*public PlayerSprite(Texture2D texture)
         {
             _texture = texture;

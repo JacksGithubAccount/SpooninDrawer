@@ -83,3 +83,6 @@ C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Content
 C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Autofac.dll
 C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\TiledCS.dll
 C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\TiledSharp.dll
+C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Content\TileSets\hilight.xnb
+C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Content\TileSets\hilightSq.xnb
+C:\Users\jckzh\source\repos\SpooninDrawer\SpooninDrawer\bin\Debug\net6.0\Content\TileSets\incrediblybadmspainttileset.xnb
