@@ -14,9 +14,9 @@ namespace SpooninDrawer.Objects
 {
     public class PlayerSprite : BaseGameObject
     {
-        public Vector2 CurrentUpSpeed { get; private set; }
+        //public Vector2 CurrentUpSpeed { get; private set; }
 
-        private float PlayerSpeed = 10.0f; //velocity in units per seconds, so 600 units per second (10.0 times 60)
+        public float PlayerSpeed { get; set; } //velocity in units per seconds, so 600 units per second (10.0 times 60)
 
         private const int BB1PosX = 29;
         private const int BB1PosY = 2;
@@ -46,6 +46,8 @@ namespace SpooninDrawer.Objects
         private bool _movingUp = false;
         private bool _movingDown = false;
 
+        public bool _MustStop = false;
+
         public override int Height => AnimationCellHeight;
         public override int Width => AnimationCellWidth;
 
@@ -62,6 +64,7 @@ namespace SpooninDrawer.Objects
             _leftToCenterAnimation = _turnLeftAnimation.ReverseAnimation;
             _rightToCenterAnimation = _turnRightAnimation.ReverseAnimation;
 
+            PlayerSpeed = 10.0f;
             //CurrentUpSpeed = _playerNormalUpSpeed;
         }
         //moved to content file
@@ -160,7 +163,13 @@ namespace SpooninDrawer.Objects
 
         public void Update(GameTime gametime)
         {
-            PlayerSpeed = (float)(600 * gametime.ElapsedGameTime.TotalSeconds);
+            if (!_MustStop)
+            {
+                PlayerSpeed = (float)(600 * gametime.ElapsedGameTime.TotalSeconds);
+            }else
+            {
+                PlayerSpeed = 0;
+            }
             if (_currentAnimation != null)
             {
                 _currentAnimation.Update(gametime);

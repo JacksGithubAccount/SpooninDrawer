@@ -246,7 +246,13 @@ namespace SpooninDrawer.Engine.States.Gameplay
 
         private void DetectCollisions()
         {
-            
+            foreach(var rect in colliders)
+            {
+                if (_playerSprite.BoundingBoxes.)
+                {
+
+                }
+            }
         }
 
         private void ResetGame()
