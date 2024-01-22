@@ -114,7 +114,8 @@ namespace SpooninDrawer
          * -more work trying to get TiledSharp to display tiled map following https://www.youtube.com/watch?v=RzTaLFHBu88&t
          * 1/10/2024
          * -made maps display, now to work on collision. video above had code for getting the collision for map. Now to add palyer collision and interaction
-         * 
+         * 1/21/2024
+         * -AABB collision only takes basegame object, two ways I see to proceed, either make new collision for rect or turn map rect to new object that inherits base game object
          */
     }
 }

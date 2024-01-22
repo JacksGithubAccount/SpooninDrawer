@@ -214,14 +214,12 @@ namespace SpooninDrawer.Engine.States.Gameplay
         }
         public override void Render(SpriteBatch spriteBatch)
         {
-            //_tiledMapRenderer.Draw(_camera.GetViewMatrix());
             _tilemapManager.Draw(spriteBatch);
             base.Render(spriteBatch);
             var transformMatrix = getCameraViewMatrix();
 
-            //spriteBatch.Begin(transformMatrix: transformMatrix);
             _playerSprite.Render(spriteBatch);
-            //spriteBatch.End();
+
             if (_gameOver)
             {
                 // draw black rectangle at 30% transparency
