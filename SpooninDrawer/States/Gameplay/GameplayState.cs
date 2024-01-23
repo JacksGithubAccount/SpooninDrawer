@@ -82,7 +82,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
         TiledMapTile _tiledMapTile;
         TiledMapRenderer _tiledMapRenderer;
         TiledMapLayer _tiledMapLayer;
-        private List<Rectangle> colliders;
+        private List<MapTileCollider> colliders;
         private TilemapManager _tilemapManager;
 
         private OrthographicCamera _camera;
@@ -101,10 +101,10 @@ namespace SpooninDrawer.Engine.States.Gameplay
             _tiledMap = LoadTiledMap(TiledMapTest);
             _tiledMapRenderer = GetTiledMapRenderer(_tiledMap);
             _tiledMapLayer = _tiledMap.GetLayer("Collisions");
-            colliders = new List<Rectangle>();
+            colliders = new List<MapTileCollider>();
             foreach (var o in _map.ObjectGroups["Collisions"].Objects)
             {
-                colliders.Add(new Rectangle((int)o.X,(int)o.Y,(int)o.Width, (int)o.Height));
+                colliders.Add(new MapTileCollider(new Rectangle((int)o.X,(int)o.Y,(int)o.Width, (int)o.Height)));
             }
 
             var turnLeftAnimation = LoadAnimation(PlayerAnimationTurnLeft);
@@ -244,12 +244,14 @@ namespace SpooninDrawer.Engine.States.Gameplay
 
         private void DetectCollisions()
         {
-            foreach(var rect in colliders)
+            var playerMapCollisionDetector = new AABBCollisionDetector<MapTileCollider,PlayerSprite>(colliders);
+            playerMapCollisionDetector.DetectCollisions(_playerSprite, (mapTile, player) =>
             {
-                if (_playerSprite.BoundingBoxes.)
-                {
+                _playerSprite._MustStop = true;
+            });
+            foreach (var rect in colliders)
+            {
 
-                }
             }
         }
 

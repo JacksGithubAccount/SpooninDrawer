@@ -116,6 +116,9 @@ namespace SpooninDrawer
          * -made maps display, now to work on collision. video above had code for getting the collision for map. Now to add palyer collision and interaction
          * 1/21/2024
          * -AABB collision only takes basegame object, two ways I see to proceed, either make new collision for rect or turn map rect to new object that inherits base game object
+         *1/22/2024
+         *-turned into basegame object, but the collision isn't working, will need more test
+         *
          */
     }
 }
