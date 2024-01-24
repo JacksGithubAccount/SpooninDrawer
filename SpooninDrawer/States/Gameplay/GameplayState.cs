@@ -249,10 +249,9 @@ namespace SpooninDrawer.Engine.States.Gameplay
             {
                 _playerSprite._MustStop = true;
             });
-            foreach (var rect in colliders)
-            {
+            //foreach (var rect in colliders)         
 
-            }
+            
         }
 
         private void ResetGame()

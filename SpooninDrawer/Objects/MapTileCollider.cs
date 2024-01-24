@@ -23,6 +23,7 @@ namespace SpooninDrawer.Objects
             BBPosX = rect.X; BBPosY = rect.Y;
             BBWidth = rect.Width;
             BBHeight = rect.Height;
+            AddBoundingBox(new Engine.Objects.BoundingBox(new Vector2(BBPosX, BBPosY), BBWidth, BBHeight));
         }
     }
 }
