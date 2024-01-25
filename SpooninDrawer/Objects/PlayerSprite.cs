@@ -17,6 +17,7 @@ namespace SpooninDrawer.Objects
         //public Vector2 CurrentUpSpeed { get; private set; }
 
         public float PlayerSpeed { get; set; } //velocity in units per seconds, so 600 units per second (10.0 times 60)
+        public bool mapCollided = false;
 
         private const int BB1PosX = 29;
         private const int BB1PosY = 2;
@@ -117,6 +118,7 @@ namespace SpooninDrawer.Objects
                 _isIdle = true;
                 _idleAnimation.Reset();
             }
+            mapCollided = false;
         }
 
         public void MoveLeft()
@@ -127,7 +129,8 @@ namespace SpooninDrawer.Objects
             _currentAnimation = _turnLeftAnimation;
             _leftToCenterAnimation.Reset();
             _turnRightAnimation.Reset();
-            Position = new Vector2(Position.X - PlayerSpeed, Position.Y);
+             Position = new Vector2(Position.X - PlayerSpeed, Position.Y);    
+            
         }
 
         public void MoveRight()
@@ -160,16 +163,33 @@ namespace SpooninDrawer.Objects
             //_turnLeftAnimation.Reset();
             Position = new Vector2(Position.X, Position.Y + PlayerSpeed);
         }
+        public void HandleMapCollision()
+        {
+            PlayerSpeed = 0;
+            mapCollided = true;
+
+            if (_movingLeft)
+            {
+
+            }else if (_movingRight)
+            {
+
+            }
+            if (_movingUp)
+            {
+
+            }else if (_movingDown)
+            {
+
+            }
+
+        }
 
         public void Update(GameTime gametime)
         {
-            if (!_MustStop)
-            {
+
                 PlayerSpeed = (float)(600 * gametime.ElapsedGameTime.TotalSeconds);
-            }else
-            {
-                PlayerSpeed = 0;
-            }
+
             if (_currentAnimation != null)
             {
                 _currentAnimation.Update(gametime);
