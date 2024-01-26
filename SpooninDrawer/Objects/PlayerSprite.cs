@@ -46,6 +46,10 @@ namespace SpooninDrawer.Objects
         private bool _movingRight = false;
         private bool _movingUp = false;
         private bool _movingDown = false;
+        private bool _stopLeft = false;
+        private bool _stopRight = false;
+        private bool _stopUp = false;
+        private bool _stopDown = false;
 
         public bool _MustStop = false;
 
@@ -129,7 +133,14 @@ namespace SpooninDrawer.Objects
             _currentAnimation = _turnLeftAnimation;
             _leftToCenterAnimation.Reset();
             _turnRightAnimation.Reset();
-             Position = new Vector2(Position.X - PlayerSpeed, Position.Y);    
+            if (!_stopLeft)
+            {
+                Position = new Vector2(Position.X - PlayerSpeed, Position.Y);
+            }
+            else
+            {
+                makeMoveAgainfromCollision();
+            }
             
         }
 
@@ -170,19 +181,28 @@ namespace SpooninDrawer.Objects
 
             if (_movingLeft)
             {
-
-            }else if (_movingRight)
+                _stopLeft = true;
+            }
+            else if (_movingRight)
             {
-
+                _stopRight = true;
             }
             if (_movingUp)
             {
-
-            }else if (_movingDown)
+                _stopUp = true;
+            }
+            else if (_movingDown)
             {
-
+                _stopDown = true;
             }
 
+        }
+        public void makeMoveAgainfromCollision()
+        {
+            _stopLeft = false;
+            _stopRight = false;
+            _stopDown = false;
+            _stopUp = false;          
         }
 
         public void Update(GameTime gametime)

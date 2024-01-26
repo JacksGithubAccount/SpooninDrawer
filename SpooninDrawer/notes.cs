@@ -122,6 +122,8 @@ namespace SpooninDrawer
          *-turns out I forgot to add the boundingbox, it now works. Now need to turn off the speed reduction
          *1/24/2023
          *-since direction is already booled, just need to find way to make it so you can't move in already moving directions, but other directions are fine
+         *
+         *
          */
     }
 }
