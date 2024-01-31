@@ -120,9 +120,10 @@ namespace SpooninDrawer
          *-turned into basegame object, but the collision isn't working, will need more test
          *1/23/2024
          *-turns out I forgot to add the boundingbox, it now works. Now need to turn off the speed reduction
-         *1/24/2023
+         *1/24/2024
          *-since direction is already booled, just need to find way to make it so you can't move in already moving directions, but other directions are fine
-         *
+         *1/30/2024
+         *-attempting movedirection detecting tiles that will collide with
          *
          */
     }

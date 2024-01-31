@@ -52,6 +52,7 @@ namespace SpooninDrawer.Objects
         private bool _stopDown = false;
 
         public bool _MustStop = false;
+        public Vector2 MoveDirection;
 
         public override int Height => AnimationCellHeight;
         public override int Width => AnimationCellWidth;
@@ -70,6 +71,7 @@ namespace SpooninDrawer.Objects
             _rightToCenterAnimation = _turnRightAnimation.ReverseAnimation;
 
             PlayerSpeed = 10.0f;
+            MoveDirection = new Vector2(Position.X,Position.Y);
             //CurrentUpSpeed = _playerNormalUpSpeed;
         }
         //moved to content file
@@ -122,6 +124,7 @@ namespace SpooninDrawer.Objects
                 _isIdle = true;
                 _idleAnimation.Reset();
             }
+            MoveDirection = new Vector2(Position.X, Position.Y);
             mapCollided = false;
         }
 
@@ -152,7 +155,7 @@ namespace SpooninDrawer.Objects
             _currentAnimation = _turnRightAnimation;
             _rightToCenterAnimation.Reset();
             _turnLeftAnimation.Reset();
-            Position = new Vector2(Position.X + PlayerSpeed, Position.Y);
+            MoveDirection = new Vector2(Position.X + PlayerSpeed, Position.Y);
         }
 
         public void MoveUp()
@@ -162,7 +165,7 @@ namespace SpooninDrawer.Objects
             //_currentAnimation = _turnRightAnimation;
             //_rightToCenterAnimation.Reset();
             //_turnLeftAnimation.Reset();
-            Position = new Vector2(Position.X, Position.Y - PlayerSpeed);
+            MoveDirection = new Vector2(Position.X, Position.Y - PlayerSpeed);
         }
 
         public void MoveDown()
@@ -172,7 +175,7 @@ namespace SpooninDrawer.Objects
             //_currentAnimation = _turnRightAnimation;
             //_rightToCenterAnimation.Reset();
             //_turnLeftAnimation.Reset();
-            Position = new Vector2(Position.X, Position.Y + PlayerSpeed);
+            MoveDirection = new Vector2(Position.X, Position.Y + PlayerSpeed);
         }
         public void HandleMapCollision()
         {
@@ -207,8 +210,8 @@ namespace SpooninDrawer.Objects
 
         public void Update(GameTime gametime)
         {
-
-                PlayerSpeed = (float)(600 * gametime.ElapsedGameTime.TotalSeconds);
+            Position = MoveDirection;
+            PlayerSpeed = (float)(600 * gametime.ElapsedGameTime.TotalSeconds);
 
             if (_currentAnimation != null)
             {

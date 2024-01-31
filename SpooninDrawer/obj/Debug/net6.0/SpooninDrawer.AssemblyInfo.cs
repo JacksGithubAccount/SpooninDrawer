@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SpooninDrawer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+66811203a6c9e89430c13dc275a46a772e1bdb71")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+566c27735acf575d3538461f635dad671add277c")]
 [assembly: System.Reflection.AssemblyProductAttribute("SpooninDrawer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SpooninDrawer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
