@@ -124,6 +124,9 @@ namespace SpooninDrawer
          *-since direction is already booled, just need to find way to make it so you can't move in already moving directions, but other directions are fine
          *1/30/2024
          *-attempting movedirection detecting tiles that will collide with
+         *1/31/2024
+         *-adding movedirection works for collision, but lost the ability to move diagonally
+         *-fixed by removing movedirection, but keeping the bools for stoping direction on collection, however, can move too into collidable object
          *
          */
     }
