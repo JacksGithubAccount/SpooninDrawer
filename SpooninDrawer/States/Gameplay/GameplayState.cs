@@ -247,17 +247,12 @@ namespace SpooninDrawer.Engine.States.Gameplay
             var playerMapCollisionDetector = new AABBCollisionDetector<MapTileCollider,PlayerSprite>(colliders);
             playerMapCollisionDetector.DetectCollisions(_playerSprite, (mapTile, player) =>
             {
-                _playerSprite.HandleMapCollision();
-            });
-            //foreach (var rect in colliders)         
-
-            
+                _playerSprite.HandleMapCollision(mapTile.BoundingBoxes[0]);
+            });            
         }
 
         private void ResetGame()
         {
-
-
             AddGameObject(_playerSprite);
 
             // position the player in the middle of the screen, at the bottom, leaving a slight gap at the bottom

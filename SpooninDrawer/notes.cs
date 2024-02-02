@@ -127,6 +127,10 @@ namespace SpooninDrawer
          *1/31/2024
          *-adding movedirection works for collision, but lost the ability to move diagonally
          *-fixed by removing movedirection, but keeping the bools for stoping direction on collection, however, can move too into collidable object
+         *2/1/2024
+         *-added position readjustment if inside a collidable map tile, it's not perfect, but it's less worse
+         *-the player actually has two bounding boxes. Need to fogure out which is colliding and reset position based on that
+         *
          *
          */
     }

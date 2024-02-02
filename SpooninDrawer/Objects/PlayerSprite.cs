@@ -189,27 +189,36 @@ namespace SpooninDrawer.Objects
             else
                 makeMoveAgainfromCollision();
         }
-        public void HandleMapCollision()
+        public void HandleMapCollision(Engine.Objects.BoundingBox MapTileBoundingBox)
         {
             //PlayerSpeed = 0;
             mapCollided = true;
-
+            Vector2 newPosition = new Vector2(Position.X,Position.Y);
             if (_movingLeft)
             {
                 _stopLeft = true;
+                if(Position.X + Width < MapTileBoundingBox.Rectangle.Right)
+                    newPosition.X = MapTileBoundingBox.Rectangle.Right;
             }
             else if (_movingRight)
             {
                 _stopRight = true;
+                if (Position.X > MapTileBoundingBox.Rectangle.Left)
+                    newPosition.X = MapTileBoundingBox.Rectangle.Left;
             }
             if (_movingUp)
             {
                 _stopUp = true;
+                if (Position.Y > MapTileBoundingBox.Rectangle.Bottom)
+                    newPosition.Y = MapTileBoundingBox.Rectangle.Bottom;
             }
             else if (_movingDown)
             {
                 _stopDown = true;
+                if (Position.Y + Height < MapTileBoundingBox.Rectangle.Top)
+                    newPosition.Y = MapTileBoundingBox.Rectangle.Top;
             }
+            Position = newPosition;
 
         }
         public void makeMoveAgainfromCollision()
