@@ -191,14 +191,24 @@ namespace SpooninDrawer.Objects
         }
         public void HandleMapCollision(Engine.Objects.BoundingBox MapTileBoundingBox)
         {
+            Engine.Objects.BoundingBox tempBB = BoundingBoxes[0];
             //PlayerSpeed = 0;
             mapCollided = true;
-            Vector2 newPosition = new Vector2(Position.X,Position.Y);
+            foreach(var bb in BoundingBoxes)
+            {
+                if (bb.CollidesWith(MapTileBoundingBox))
+                {
+                    tempBB = bb;
+                }
+            }
+            Vector2 newPosition = new Vector2(Position.X, Position.Y);
             if (_movingLeft)
             {
                 _stopLeft = true;
-                if(Position.X + Width < MapTileBoundingBox.Rectangle.Right)
+                if(Position.X + Width <= MapTileBoundingBox.Rectangle.Right)
                     newPosition.X = MapTileBoundingBox.Rectangle.Right;
+                //if (tempBB.Rectangle.Left < MapTileBoundingBox.Rectangle.Right)
+                //    newPosition.X = tempBB.Rectangle.Left;
             }
             else if (_movingRight)
             {
@@ -209,14 +219,14 @@ namespace SpooninDrawer.Objects
             if (_movingUp)
             {
                 _stopUp = true;
-                if (Position.Y > MapTileBoundingBox.Rectangle.Bottom)
+                if (Position.Y < MapTileBoundingBox.Rectangle.Bottom)
                     newPosition.Y = MapTileBoundingBox.Rectangle.Bottom;
             }
             else if (_movingDown)
             {
                 _stopDown = true;
-                if (Position.Y + Height < MapTileBoundingBox.Rectangle.Top)
-                    newPosition.Y = MapTileBoundingBox.Rectangle.Top;
+                if (Position.Y + Height > MapTileBoundingBox.Rectangle.Top)
+                    newPosition.Y = MapTileBoundingBox.Rectangle.Top - Height;
             }
             Position = newPosition;
 
