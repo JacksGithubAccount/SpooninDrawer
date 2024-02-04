@@ -4,6 +4,7 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TiledMaps/test - Copy.tmx</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Animations/Player/idle.xml</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Animations/Player/left_walk.xml</File>
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Animations/Player/right_walk.xml</File>
@@ -28,27 +29,6 @@
     <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TileSets/incrediblybadmspainttileset.tsx</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
     <File xsi:nil="true" />
   </DestFiles>
 </SourceFileCollection>

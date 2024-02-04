@@ -153,6 +153,11 @@
 /processorParam:TextureFormat=Color
 /build:Sprites/Animations/PlayerSpriteSheet.png
 
+#begin TiledMaps/test - Copy.tmx
+/importer:TiledMapImporter
+/processor:TiledMapProcessor
+/build:TiledMaps/test - Copy.tmx
+
 #begin TiledMaps/test.tmx
 /importer:TiledMapImporter
 /processor:TiledMapProcessor

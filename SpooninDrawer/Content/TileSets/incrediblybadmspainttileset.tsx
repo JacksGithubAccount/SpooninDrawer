@@ -45,9 +45,6 @@
   <properties>
    <property name="Collision" type="bool" value="true"/>
   </properties>
-  <objectgroup draworder="index" id="2">
-   <object id="2" x="24" y="9" width="24" height="40"/>
-  </objectgroup>
  </tile>
  <tile id="61">
   <properties>

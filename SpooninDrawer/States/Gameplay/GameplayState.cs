@@ -247,7 +247,7 @@ namespace SpooninDrawer.Engine.States.Gameplay
             var playerMapCollisionDetector = new AABBCollisionDetector<MapTileCollider,PlayerSprite>(colliders);
             playerMapCollisionDetector.DetectCollisions(_playerSprite, (mapTile, player) =>
             {
-                _playerSprite.HandleMapCollision(mapTile.BoundingBoxes[0]);
+                _playerSprite.HandleMapCollision(mapTile);
             });            
         }
 
