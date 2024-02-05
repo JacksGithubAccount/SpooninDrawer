@@ -130,8 +130,12 @@ namespace SpooninDrawer
          *2/1/2024
          *-added position readjustment if inside a collidable map tile, it's not perfect, but it's less worse
          *-the player actually has two bounding boxes. Need to fogure out which is colliding and reset position based on that
-         *2/2024
+         *2/2/2024
          *-colliding up or down and moving left or right makes player go through collidable object, is probably related to position not matching up with the bounding boxes
+         *2/3/2024
+         *-added boxes to look ahead in moving direction to find collision. Also MGCB broke, can't build anything amymore.
+         *2/4/2024
+         *-MGCB broke, after must troubleshooting, conclusion is problem with this program. Maybe. More troubleshoot may be needed.
          *
          */
     }

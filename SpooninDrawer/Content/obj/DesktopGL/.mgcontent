@@ -1,34 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<SourceFileCollection xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Profile>Reach</Profile>
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TiledMaps/test - Copy.tmx</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Animations/Player/idle.xml</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Animations/Player/left_walk.xml</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Animations/Player/right_walk.xml</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Fonts/Stats.spritefont</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Fonts/TestText.spritefont</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/EmptyScreen.png</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/SettingsScreen.png</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/titleScreen.png</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Menu/TitleScreenArroww.png</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/music/FutureAmbient_1.wav</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/music/FutureAmbient_2.wav</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/music/FutureAmbient_3.wav</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/music/FutureAmbient_4.wav</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/sounds/bullet.wav</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/sounds/empty.wav</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Sprites/Animations/PlayerSpriteSheet - Copy.png</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Sprites/Animations/PlayerSpriteSheet.png</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TiledMaps/test.tmx</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TileSets/hilight.png</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TileSets/hilightSq.png</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TileSets/incrediblybadmspainttileset.png</File>
-    <File>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/TileSets/incrediblybadmspainttileset.tsx</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/Animations/Player/idle.xml</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/Animations/Player/left_walk.xml</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/Animations/Player/right_walk.xml</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/Fonts/Stats.spritefont</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/Fonts/TestText.spritefont</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/Menu/Empty.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/Menu/EmptyScreen.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/Menu/SettingsScreen.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/Menu/titleScreen.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/Menu/TitleScreenArroww.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/music/FutureAmbient_1.wav</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/music/FutureAmbient_2.wav</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/music/FutureAmbient_3.wav</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/sounds/empty.wav</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/Sprites/Animations/PlayerSpriteSheet - Copy.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/Sprites/Animations/PlayerSpriteSheet.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/TileSets/hilight.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/TileSets/hilightSq.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/TileSets/incrediblybadmspainttileset - Copy.png</File>
+    <File>C:/Users/jckzh/source/repos/SpooninDrawer-mgcb broke/SpooninDrawer/Content/TileSets/incrediblybadmspainttileset.png</File>
   </SourceFiles>
-  <DestFiles>
-    <File xsi:nil="true" />
-  </DestFiles>
 </SourceFileCollection>

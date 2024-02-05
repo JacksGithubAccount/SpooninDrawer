@@ -33,7 +33,7 @@
 
 #begin Fonts/Stats.spritefont
 /importer:FontDescriptionImporter
-/processor:LocalizedFontProcessor
+/processor:FontDescriptionProcessor
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:Fonts/Stats.spritefont
@@ -44,6 +44,18 @@
 /processorParam:PremultiplyAlpha=True
 /processorParam:TextureFormat=Compressed
 /build:Fonts/TestText.spritefont
+
+#begin Menu/Empty.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Menu/Empty.png
 
 #begin Menu/EmptyScreen.png
 /importer:TextureImporter
@@ -111,12 +123,6 @@
 /processorParam:Quality=Best
 /build:music/FutureAmbient_3.wav
 
-#begin music/FutureAmbient_4.wav
-/importer:WavImporter
-/processor:SoundEffectProcessor
-/processorParam:Quality=Best
-/build:music/FutureAmbient_4.wav
-
 #begin sounds/bullet.wav
 /importer:WavImporter
 /processor:SoundEffectProcessor
@@ -158,11 +164,6 @@
 /processor:TiledMapProcessor
 /build:TiledMaps/test - Copy.tmx
 
-#begin TiledMaps/test.tmx
-/importer:TiledMapImporter
-/processor:TiledMapProcessor
-/build:TiledMaps/test.tmx
-
 #begin TileSets/hilight.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -186,6 +187,23 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:TileSets/hilightSq.png
+
+#begin TileSets/incrediblybadmspainttileset - Copy.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:TileSets/incrediblybadmspainttileset - Copy.png
+
+#begin TileSets/incrediblybadmspainttileset - Copy.tsx
+/importer:TiledMapTilesetImporter
+/processor:TiledMapTilesetProcessor
+/build:TileSets/incrediblybadmspainttileset - Copy.tsx
 
 #begin TileSets/incrediblybadmspainttileset.png
 /importer:TextureImporter

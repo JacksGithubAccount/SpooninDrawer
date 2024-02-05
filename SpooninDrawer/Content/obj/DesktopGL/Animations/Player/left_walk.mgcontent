@@ -3,7 +3,7 @@
   <SourceFile>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/Animations/Player/left_walk.xml</SourceFile>
   <SourceTime>2023-10-27T19:19:06.6226833-04:00</SourceTime>
   <DestFile>C:/Users/jckzh/source/repos/SpooninDrawer/SpooninDrawer/Content/bin/DesktopGL/Animations/Player/left_walk.xnb</DestFile>
-  <DestTime>2024-02-03T20:52:59.4585421-05:00</DestTime>
+  <DestTime>2024-02-04T19:35:45.5693939-05:00</DestTime>
   <Importer>XmlImporter</Importer>
   <ImporterTime>2022-07-26T07:44:56-04:00</ImporterTime>
   <Processor>PassThroughProcessor</Processor>
